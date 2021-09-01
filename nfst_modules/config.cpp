@@ -1,10 +1,20 @@
+// Add-on information
 class CfgPatches
 {
 	class nfst_modules
 	{
-		units[] = {"nfst_ModuleNuke"}; //TODO
-		requiredVersion = 1.0; //TODO
-		requiredAddons[] = {"A3_Modules_F"}; //TODO
+        // Metadata for editor
+        name   = "91st Paramarines Custom Modules";
+        author = "Kerpollo";
+        url    = "https://www.91st-paramarines.com";
+
+        // Requirements data
+        requiredVersion  = 1.0;
+        requiredAddons[] = {"A3_Modules_F"};
+
+        // List of added content
+        units[] = {"nfst_ModuleNuke"};
+        weapons[] = {};
 	};
 };
 
@@ -18,7 +28,7 @@ class CfgFactionClasses
 	};
 };
 
-
+// Getting serious
 class CfgVehicles
 {
 	class Logic;
@@ -43,24 +53,20 @@ class CfgVehicles
 	class nfst_ModuleNuke: Module_F
 	{
 		// Standard object definitions
-		scope = 2; // Editor visibility; 2 will show it in the menu, 1 will hide it.
-        scopeCurator = 2;
-		displayName = "Supply drop"; // Name displayed in the menu
-		icon = "\nfst_modules\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
-		category = "nfst_modules";
+		scope        = 2;              // Editor visibility (1 is hide, 2 is show)
+        scopeCurator = 2;              // Zeus visibility
+		displayName  = "Supply drop";  // Name displayed in the menu
+		category     = "nfst_modules"; // The category we defined above
+        icon         = "\nfst_modules\data\iconNuke_ca.paa"; // Delete to use the default icon
 
-		// Name of function triggered once conditions are met
-		function = "nfst_fnc_moduleSupplyDrop";
-		// Execution priority, modules with lower number are executed first. 0 is used when the attribute is undefined
-		functionPriority = 1;
-		// 0 for server only execution, 1 for global execution, 2 for persistent global execution
-		isGlobal = 1;
-		// 1 for module waiting until all synced triggers are activated
+		function         = "nfst_fnc_moduleSupplyDrop"; // Name of function triggered once conditions are met
+		functionPriority = 1; // Lower number is higher priority
+		isGlobal         = 1; // 0: server only, 1: global, 2: persistent global
+
+        // Obscure attributes
 		isTriggerActivated = 1;
-		// 1 if modules is to be disabled once it is activated (i.e., repeated trigger activation won't work)
-		isDisposable = 1;
-		// 1 to run init function in Eden Editor as well
-		is3DEN = 0;
+		isDisposable       = 1;
+		is3DEN             = 0;
 
 		// Menu displayed when the module is placed or double-clicked on by Zeus
 		//curatorInfoType = "RscDisplayAttributeModuleNuke";
@@ -128,6 +134,7 @@ class CfgVehicles
 	};
 };
 
+// Declaring all functions used by the module
 class CfgFunctions
 {
 	class nfst

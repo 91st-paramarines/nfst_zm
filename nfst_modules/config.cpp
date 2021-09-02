@@ -13,7 +13,7 @@ class CfgPatches
         requiredAddons[] = {"A3_Modules_F"};
 
         // List of added content
-        units[] = {"nfst_ModuleNuke"};
+        units[] = {"nfst_ModuleSupplyDrop"};
         weapons[] = {};
 	};
 };
@@ -50,14 +50,14 @@ class CfgVehicles
 			class AnyBrain;
 		};
 	};
-	class nfst_ModuleNuke: Module_F
+	class nfst_ModuleSupplyDrop: Module_F
 	{
 		// Standard object definitions
 		scope        = 2;              // Editor visibility (1 is hide, 2 is show)
         scopeCurator = 2;              // Zeus visibility
 		displayName  = "Supply drop";  // Name displayed in the menu
 		category     = "nfst_modules"; // The category we defined above
-        icon         = "\nfst_modules\data\iconNuke_ca.paa"; // Delete to use the default icon
+        icon         = "\nfst_modules\data\icon.paa"; // Delete to use the default icon
 
 		function         = "nfst_fnc_moduleSupplyDrop"; // Name of function triggered once conditions are met
 		functionPriority = 1; // Lower number is higher priority
@@ -69,40 +69,28 @@ class CfgVehicles
 		is3DEN             = 0;
 
 		// Menu displayed when the module is placed or double-clicked on by Zeus
-		//curatorInfoType = "RscDisplayAttributeModuleNuke";
+        //curatorInfoType = "RscDisplayAttributeModuleNuke";
+
 
 		// Module attributes, uses https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes#Entity_Specific
 		class Attributes: AttributesBase
 		{
-			// Arguments shared by specific module type (have to be mentioned in order to be present)
 			class Units: Units
 			{
-				property = "nfst_ModuleNuke_Units";
+				property = "nfst_ModuleSupplyDrop_Units";
 			};
-			// Module specific arguments
-			class Yield: Combo
-			{
-				// Unique property, use "<moduleClass>_<attributeClass>" format to make sure the name is unique in the world
-				property = "nfst_ModuleNuke_Yield";
-				displayName = "Nuclear weapon yield"; // Argument label
-				tooltip = "How strong will the explosion be"; // Tooltip description
-				typeName = "NUMBER"; // Value type, can be "NUMBER", "STRING" or "BOOL"
-				defaultValue = "50"; // Default attribute value. WARNING: This is an expression, and its returned value will be used (50 in this case)
-				class Values
-				{
-					class 50Mt	{name = "50 megatons";	value = 50;}; // Listbox item
-					class 100Mt	{name = "100 megatons"; value = 100;};
-				};
-			};
-			class Name: Edit
-			{
-				displayName = "Name";
-				tooltip = "Name of the nuclear device";
-				// Default text filled in the input box
-				// Because it is an expression, to return a String one must have a string within a string
-				defaultValue = """Tsar Bomba""";
-			};
-			class ModuleDescription: ModuleDescription{}; // Module description should be shown last
+            class FighterEscort
+            {
+                displayName  = "Fighter Escort?";
+                tooltip      = "Is the drop plane escorted by fighter planes?";
+                property     = "nfst_ModuleSupplyDrop_FighterEscort";
+                unique       = 0;
+                validate     = "none";
+                condition    = "0";
+                typeName     = "BOOL";
+                defaultValue = "true";
+
+            };
 		};
 
 		// Module description. Must inherit from base class, otherwise pre-defined entities won't be available

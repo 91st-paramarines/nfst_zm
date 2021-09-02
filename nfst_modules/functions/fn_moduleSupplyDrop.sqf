@@ -1,8 +1,19 @@
-// Argument 0 is module logic.
-///_logic = param [0,objNull,[objNull]];
+// Parameters of the drop
+spawnOffsetX   = 0;
+spawnOffsetY   = -5000;
+altitudeATL    = 200;
+planeSpeedX    = 0;
+planeSpeedY    = 100;
+planeSpeedZ    = 0;
+despawnOffsetX = -2000;
+despawnOffsetY = -5000;
+crateType      = "AmmoCrate_NoInteractive_";
+smokeType      = "SmokeShellPurple";
 
-// Argument 1 is list of affected units (affected by value selected in the 'class Units' argument))
-///_units = param [1,[],[[]]];
+// Retrieving data from the module
+_logic = param [0,objNull,[objNull]]; // Argument 0 is module logic
+
+///_units = param [1,[],[[]]]; // Argument 1 is list of affected units (affected by value selected in the 'class Units' argument))
 
 // True when the module was activated, false when it is deactivated (i.e., synced triggers are no longer active)
 ///_activated = param [2,true,[true]];
@@ -14,6 +25,77 @@
 ///	 hint format ["Bomb yield is: %1", _bombYield ]; // will display the bomb yield, once the game is started
 ///};
 // Module function is executed by spawn command, so returned value is not necessary, but it is good practice.
+
+
+private _markerPos  = getPos _logic;
+systemChat str _markerPos;
+private _markerX    = _markerPos select 0;
+private _markerY    = _markerPos select 1;
+
+private _planeSpawn = [_markerX + spawnOffsetX, _markerY + spawnOffsetY, altitudeATL];
+
+plane = "LIB_C47_Skytrain" createVehicle _planeSpawn;
+[plane, altitudeATL, _planeSpawn, "ATL"] call BIS_fnc_setHeight;
+plane setVelocity [planeSpeedX, planeSpeedY, planeSpeedZ];
+plane flyInHeight altitudeATL;
+private _planeGroup = createVehicleCrew plane;
+driver plane disableAI "FSM";
+
+private _waypointDzPos = [_markerX, _markerY, altitudeATL];
+private _waypointDz    = _planeGroup addWaypoint [_waypointDzPos, 1];
+
+_waypointDz setWaypointCompletionRadius 1;
+_waypointDz setWaypointStatements
+["true", "
+[] spawn
+{
+ private _speedVector = velocity plane;
+ private _speedX = _speedVector select 0;
+ private _speedY = _speedVector select 1;
+ private _speedPlanar = sqrt (_speedX * _speedX + _speedY * _speedY);
+ private _underShoot  = 100;
+ private _napTime     = round (_underShoot / _speedPlanar);
+ sleep _napTime;
+
+ private _dropPos    = getPos plane;
+ private _dropHeight = _dropPos select 2;
+ private _parachute  = 'B_Parachute_02_F' createVehicle _dropPos;
+ [_parachute, _dropHeight, _dropPos, 'ATL'] call BIS_fnc_setHeight;
+
+ private _crate = crateType createVehicle _dropPos;
+ ['AmmoboxInit', [_crate, true]] call BIS_fnc_arsenal;
+ _crate attachTo [_parachute, [0, 0, 0]];
+ systemChat format['%1', velocity _crate select 2];
+
+ private _smokeType = smokeType;
+ [_crate, _parachute, _smokeType] spawn
+ {
+  params ['_crate', '_parachute', '_smokeType'];
+  waitUntil {
+   getPos _crate select 2 < 1 || isNull _parachute
+  };
+
+  detach _crate;
+  [_crate, 0, getPos _crate, 'ATL'] call BIS_fnc_setHeight;
+  _smokeType createVehicle [getPos _crate select 0, getPos _crate select 1, 5];
+ };
+};
+"];
+
+private _waypointRtbPos = [_markerX + despawnOffsetX, _markerY + despawnOffsetY, altitudeATL];
+private _waypointRtb    = _planeGroup addWaypoint [_waypointRtbPos, 1];
+
+_waypointRtb setWaypointStatements
+["true", "
+{plane deleteVehicleCrew _x} forEach crew plane;
+deleteVehicle plane;
+"];
+
+
+
+
+
+
 
 systemChat "hello";
 true;

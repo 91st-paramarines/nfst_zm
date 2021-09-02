@@ -97,5 +97,5 @@ deleteVehicle plane;
 
 
 
-systemChat "hello";
+systemChat "Hello";
 true;

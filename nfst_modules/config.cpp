@@ -28,6 +28,7 @@ class CfgFactionClasses
 	};
 };
 
+
 // Getting serious
 class CfgVehicles
 {
@@ -37,14 +38,13 @@ class CfgVehicles
 		class AttributesBase
 		{
 			class Default;
-			class Edit;					// Default edit box (i.e., text input field)
-			class Combo;				// Default combo box (i.e., drop-down menu)
-			class Checkbox;				// Default checkbox (returned value is Boolean)
-			class CheckboxNumber;		// Default checkbox (returned value is Number)
-			class ModuleDescription;	// Module description
-			class Units;				// Selection of units on which the module is applied
+			class Edit;
+			class Combo;
+			class Checkbox;
+			class CheckboxNumber;
+			class ModuleDescription;
+			class Units;
 		};
-		// Description base classes, for more information see below
 		class ModuleDescription
 		{
 			class AnyBrain;
@@ -59,17 +59,17 @@ class CfgVehicles
 		category     = "nfst_modules"; // The category we defined above
         icon         = "\nfst_modules\data\icon.paa"; // Delete to use the default icon
 
-		function         = "nfst_fnc_moduleSupplyDrop"; // Name of function triggered once conditions are met
+		//function         = "nfst_fnc_moduleSupplyDrop"; // Name of function triggered once conditions are met
 		functionPriority = 1; // Lower number is higher priority
-		isGlobal         = 1; // 0: server only, 1: global, 2: persistent global
+		isGlobal         = 0; // 0: server only, 1: global, 2: persistent global
 
         // Obscure attributes
 		isTriggerActivated = 1;
-		isDisposable       = 1;
+		isDisposable       = 0;
 		is3DEN             = 0;
 
 		// Menu displayed when the module is placed or double-clicked on by Zeus
-        //curatorInfoType = "RscDisplayAttributeModuleNuke";
+        curatorInfoType = "RscDisplayAttributesNfstModules";
 
 
 		// Module attributes, uses https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes#Entity_Specific
@@ -79,7 +79,7 @@ class CfgVehicles
 			{
 				property = "nfst_ModuleSupplyDrop_Units";
 			};
-            class FighterEscort
+            class FighterEscort: Checkbox
             {
                 displayName  = "Fighter Escort?";
                 tooltip      = "Is the drop plane escorted by fighter planes?";
@@ -88,36 +88,14 @@ class CfgVehicles
                 validate     = "none";
                 condition    = "0";
                 typeName     = "BOOL";
-                defaultValue = "true";
+                defaultValue = "false";
 
             };
 		};
 
-		// Module description. Must inherit from base class, otherwise pre-defined entities won't be available
 		class ModuleDescription: ModuleDescription
 		{
-			description = "Short module description"; // Short description, will be formatted as structured text
-			sync[] = {"LocationArea_F"}; // Array of synced entities (can contain base classes)
-
-			class LocationArea_F
-			{
-				description[] = { // Multi-line descriptions are supported
-					"First line",
-					"Second line"
-				};
-				position = 1; // Position is taken into effect
-				direction = 1; // Direction is taken into effect
-				optional = 1; // Synced entity is optional
-				duplicate = 1; // Multiple entities of this type can be synced
-				synced[] = {"BLUFORunit","AnyBrain"}; // Pre-define entities like "AnyBrain" can be used. See the list below
-			};
-			class BLUFORunit
-			{
-				description = "Short description";
-				displayName = "Any BLUFOR unit"; // Custom name
-				icon = "iconMan"; // Custom icon (can be file path or CfgVehicleIcons entry)
-				side = 1; // Custom side (will determine icon color)
-			};
+			description = "IT'S CALLED SUPPLY DROP, WHAT DO YOU THINK IT DOES?";
 		};
 	};
 };
@@ -135,4 +113,65 @@ class CfgFunctions
             };
 		};
 	};
+};
+
+
+class RscDisplayAttributes;
+class RscFrame;
+class RscPicture;
+class RscButton;
+
+class RscDisplayAttributesNfstModules: RscDisplayAttributes
+{
+    movingEnable = true;
+    enableSimulation = true;
+    class controls {
+        ////////////////////////////////////////////////////////
+        // GUI EDITOR OUTPUT START (by 1st Lt K. Ollo, v1.063, #Zybedo)
+        ////////////////////////////////////////////////////////
+
+        class RscFrame_1800: RscFrame
+        {
+        	idc = 1800;
+        	x = 0.0760149;
+        	y = 0.234848;
+        	w = 0.1;
+        	h = 0.1;
+        };
+        class nfst_RscPicture: RscPicture
+        {
+        	idc = 1200;
+        	text = "#(argb,8,8,3)color(1,1,1,1)";
+        	x = 0.293584 * safezoneW + safezoneX;
+        	y = 0.225 * safezoneH + safezoneY;
+        	w = 0.412833 * safezoneW;
+        	h = 0.55 * safezoneH;
+        	colorBackground[] = {0,0,0,1};
+        	colorActive[] = {0,0,0,1};
+        };
+        class nfst_RscButtonOk: RscButton
+        {
+        	idc = 1600;
+        	text = "Ok"; //--- ToDo: Localize;
+        	x = 0.654812 * safezoneW + safezoneX;
+        	y = 0.698 * safezoneH + safezoneY;
+        	w = 0.0412833 * safezoneW;
+        	h = 0.055 * safezoneH;
+            action = "execVM 'nfst_modules\functions\fn_moduleSupplyDrop.sqf'";
+        };
+        class nsft_RscButtonCancel: RscButton
+        {
+        	idc = 1601;
+        	text = "Cancel"; //--- ToDo: Localize;
+        	x = 0.303904 * safezoneW + safezoneX;
+        	y = 0.698 * safezoneH + safezoneY;
+        	w = 0.0412833 * safezoneW;
+        	h = 0.055 * safezoneH;
+            action = "closeDialog 0";
+        };
+
+        ////////////////////////////////////////////////////////
+        // GUI EDITOR OUTPUT END
+        ////////////////////////////////////////////////////////
+    };
 };

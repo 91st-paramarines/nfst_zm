@@ -59,7 +59,7 @@ class CfgVehicles
 		category     = "nfst_modules"; // The category we defined above
         icon         = "\nfst_modules\data\icon.paa"; // Delete to use the default icon
 
-		//function         = "nfst_fnc_moduleSupplyDrop"; // Name of function triggered once conditions are met
+		function         = "nfst_fnc_moduleSupplyDropPreInit"; // Name of function triggered once conditions are met
 		functionPriority = 1; // Lower number is higher priority
 		isGlobal         = 0; // 0: server only, 1: global, 2: persistent global
 
@@ -111,6 +111,14 @@ class CfgFunctions
             {
                 file = "nfst_modules\functions\fn_moduleSupplyDrop.sqf";
             };
+            class moduleSupplyDropInit
+            {
+                file = "nfst_modules\functions\fn_moduleSupplyDropInit.sqf";
+            };
+            class moduleSupplyDropPreInit
+            {
+                file = "nfst_modules\functions\fn_moduleSupplyDropPreInit.sqf";
+            };
 		};
 	};
 };
@@ -136,7 +144,7 @@ class RscXSliderH;
 class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
 {
 	onSetFocus = "";
-	idc = -1;
+	idc = 9100;
 	class controls
 	{
         ////////////////////////////////////////////////////////
@@ -185,6 +193,8 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
             h = 0.044 * safezoneH;
             colorText[] = {1,1,1,1};
             colorBackground[] = {0,0,0,0.8};
+
+            action = "execVM '\nfst_modules\functions\fn_moduleSupplyDropInit.sqf'";
         };
         class RscButtonMenu_Cancel: RscButtonMenu
         {
@@ -214,7 +224,7 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
         {
             idc = 1003;
 
-            text = "Spawn point distance"; //--- ToDo: Localize;
+            text = "Spawn point distance (m)"; //--- ToDo: Localize;
             x = 0.303904 * safezoneW + safezoneX;
             y = 0.357 * safezoneH + safezoneY;
             w = 0.087727 * safezoneW;
@@ -229,6 +239,9 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
             y = 0.357 * safezoneH + safezoneY;
             w = 0.216737 * safezoneW;
             h = 0.022 * safezoneH;
+
+            sliderRange[] = {100, 10000};
+            sliderStep = 1;
 
             onSliderPosChanged = "ctrlSetText [1400, str (_this select 1)]";
         };
@@ -245,7 +258,7 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
         {
             idc = 1004;
 
-            text = "Spawn point bearing"; //--- ToDo: Localize;
+            text = "Spawn point bearing (°)"; //--- ToDo: Localize;
             x = 0.303904 * safezoneW + safezoneX;
             y = 0.401 * safezoneH + safezoneY;
             w = 0.087727 * safezoneW;
@@ -260,6 +273,9 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
             y = 0.401 * safezoneH + safezoneY;
             w = 0.216737 * safezoneW;
             h = 0.022 * safezoneH;
+
+            sliderRange[] = {0, 359};
+            sliderStep = 1;
 
             onSliderPosChanged = "ctrlSetText [1401, str (_this select 1)]";
         };
@@ -286,7 +302,7 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
         {
             idc = 1005;
 
-            text = "Despawn point distance"; //--- ToDo: Localize;
+            text = "Despawn point distance (m)"; //--- ToDo: Localize;
             x = 0.303904 * safezoneW + safezoneX;
             y = 0.467 * safezoneH + safezoneY;
             w = 0.0928874 * safezoneW;
@@ -301,6 +317,9 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
             y = 0.467 * safezoneH + safezoneY;
             w = 0.216737 * safezoneW;
             h = 0.022 * safezoneH;
+
+            sliderRange[] = {100, 10000};
+            sliderStep = 1;
 
             onSliderPosChanged = "ctrlSetText [1402, str (_this select 1)]";
         };
@@ -317,7 +336,7 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
         {
             idc = 1006;
 
-            text = "Despawn point bearing"; //--- ToDo: Localize;
+            text = "Despawn point bearing (°)"; //--- ToDo: Localize;
             x = 0.303904 * safezoneW + safezoneX;
             y = 0.511 * safezoneH + safezoneY;
             w = 0.087727 * safezoneW;
@@ -332,6 +351,9 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
             y = 0.511 * safezoneH + safezoneY;
             w = 0.216737 * safezoneW;
             h = 0.022 * safezoneH;
+
+            sliderRange[] = {0, 359};
+            sliderStep = 1;
 
             onSliderPosChanged = "ctrlSetText [1403, str (_this select 1)]";
         };
@@ -358,7 +380,7 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
         {
             idc = 1007;
 
-            text = "Flight speed"; //--- ToDo: Localize;
+            text = "Flight speed (kph)"; //--- ToDo: Localize;
             x = 0.303904 * safezoneW + safezoneX;
             y = 0.577 * safezoneH + safezoneY;
             w = 0.087727 * safezoneW;
@@ -373,6 +395,9 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
             y = 0.577 * safezoneH + safezoneY;
             w = 0.216737 * safezoneW;
             h = 0.022 * safezoneH;
+
+            sliderRange[] = {80, 250};
+            sliderStep = 1;
 
             onSliderPosChanged = "ctrlSetText [1404, str (_this select 1)]";
         };
@@ -389,7 +414,7 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
         {
             idc = 1008;
 
-            text = "Flight altitude"; //--- ToDo: Localize;
+            text = "Flight altitude (m)"; //--- ToDo: Localize;
             x = 0.303904 * safezoneW + safezoneX;
             y = 0.621 * safezoneH + safezoneY;
             w = 0.087727 * safezoneW;
@@ -404,6 +429,9 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
             y = 0.621 * safezoneH + safezoneY;
             w = 0.216737 * safezoneW;
             h = 0.022 * safezoneH;
+
+            sliderRange[] = {100, 1000};
+            sliderStep = 1;
 
             onSliderPosChanged = "ctrlSetText [1405, str (_this select 1)]";
         };
@@ -440,7 +468,6 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
         class RscCheckbox_FighterEscort: RscCheckBox
         {
             idc = 2800;
-            onCheckedChanged = "nfst_moduleSupplyDrop_hasEscort = (_this select 1)";
 
             x = 0.50516 * safezoneW + safezoneX;
             y = 0.687 * safezoneH + safezoneY;
@@ -466,6 +493,9 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
             y = 0.731 * safezoneH + safezoneY;
             w = 0.216737 * safezoneW;
             h = 0.022 * safezoneH;
+
+            sliderRange[] = {1, 5};
+            sliderStep = 1;
 
             onSliderPosChanged = "ctrlSetText [1406, str (_this select 1)]";
         };

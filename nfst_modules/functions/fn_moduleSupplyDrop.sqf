@@ -1,3 +1,25 @@
+private _spawnDistance   = sliderPosition 1900;
+private _spawnBearing    = sliderPosition 1901;
+private _despawnDistance = sliderPosition 1902;
+private _despawnBearing  = sliderPosition 1903;
+private _flightSpeed     = sliderPosition 1904;
+private _flightAltitude  = sliderPosition 1905;
+private _hasEscort       = cbChecked ((findDisplay 9100) displayCtrl 2800);
+private _escortSize      = sliderPosition 1906;
+private _logic           = param [0,objNull,[objNull]];
+private _dropPos         = getPos _logic;
+
+systemChat "Received a supply drop request";
+systemChat format ["Spawn distance    :%1", _spawnDistance  ];
+systemChat format ["Spawn bearing     :%1", _spawnBearing   ];
+systemChat format ["Despawn distance  :%1", _despawnDistance];
+systemChat format ["Despawn bearing   :%1", _despawnBearing ];
+systemChat format ["Flight speed      :%1", _flightSpeed    ];
+systemChat format ["Flight altitude   :%1", _flightAltitude ];
+systemChat format ["Has escort        :%1", _hasEscort      ];
+systemChat format ["Escort size       :%1", _escortSize     ];
+systemChat format ["Module position is:%1", _dropPos        ];
+
 // Parameters of the drop
 spawnOffsetX   = 0;
 spawnOffsetY   = -5000;
@@ -91,11 +113,4 @@ _waypointRtb setWaypointStatements
 deleteVehicle plane;
 "];
 
-
-
-
-
-
-
-systemChat "Hello";
 true;

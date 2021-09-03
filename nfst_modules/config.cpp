@@ -59,7 +59,7 @@ class CfgVehicles
 		category     = "nfst_modules"; // The category we defined above
         icon         = "\nfst_modules\data\icon.paa"; // Delete to use the default icon
 
-		function         = "nfst_fnc_moduleSupplyDropPreInit"; // Name of function triggered once conditions are met
+		function         = "nfst_fnc_moduleSupplyDropInit"; // Name of function triggered once conditions are met
 		functionPriority = 1; // Lower number is higher priority
 		isGlobal         = 0; // 0: server only, 1: global, 2: persistent global
 
@@ -114,10 +114,6 @@ class CfgFunctions
             class moduleSupplyDropInit
             {
                 file = "nfst_modules\functions\fn_moduleSupplyDropInit.sqf";
-            };
-            class moduleSupplyDropPreInit
-            {
-                file = "nfst_modules\functions\fn_moduleSupplyDropPreInit.sqf";
             };
 		};
 	};
@@ -194,7 +190,7 @@ class RscDisplayAttributesNfstModuleSupplyDrop: RscDisplayAttributes
             colorText[] = {1,1,1,1};
             colorBackground[] = {0,0,0,0.8};
 
-            action = "execVM '\nfst_modules\functions\fn_moduleSupplyDropInit.sqf'";
+            action = "execVM '\nfst_modules\functions\fn_moduleSupplyDrop.sqf'";
         };
         class RscButtonMenu_Cancel: RscButtonMenu
         {

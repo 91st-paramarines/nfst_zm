@@ -12,8 +12,8 @@ private _logic           = param [0,objNull,[objNull]];
 // ----- Future user inputs, for now hardcoded settings
 crateType      = "AmmoCrate_NoInteractive_";
 smokeType      = "SmokeShellPurple";
-formationSpacing        = 50;
-formationAperture = 60;
+formationSpacing  = 100;
+formationAperture = 120;
 /*----------------------------------------------------------------------------*/
 
 // Closing the GUI display

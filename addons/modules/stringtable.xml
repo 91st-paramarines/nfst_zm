@@ -25,5 +25,69 @@
       <English>Request a supply drop at the module location.</English>
       <French>Requérir un ravitaillement aéroporté à l'endroit du module.</French>
     </Key>
+    <Key ID="STR_NFST_Modules_DisplayButtonCancel">
+      <English>Cancel</English>
+      <French>Annuler</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_DisplayButtonOk">
+      <English>Ok</English>
+      <French>Ok</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayHeaderSplashRadius">
+      <English>Splash radius</English>
+      <French>Zone de tir</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayTooltipSplashRadius">
+      <English>Maximum distance from an impact to the module position.This value must be greater than the safe radius.</English>
+      <French>Distance maximale d'un impact à la position du module. Cette valeur doit être supérieure à celle de la zone de sécurité.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayHeaderSafeZone">
+      <English>Safe radius</English>
+      <French>Zone de sécurité</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayTooltipSafeZone">
+      <English>Minimum distance from an impact to the module position. This value must be lesser than the splash radius.</English>
+      <French>Distance minimum d'un impact à la position du module. Cette valeur doit être inférieure à celle de la zone de tir.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayHeaderOrdnanceType">
+      <English>Ordnance Type</English>
+      <French>Type de munition</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayTooltipOrdnanceType">
+      <English>The type of ordnance to use in the fire mission.</English>
+      <French>Le type de munition à utiliser pour la frappe d'artillerie.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayHeaderRoundsPerSalvo">
+      <English>Number of rounds</English>
+      <French>Nombre de tirs</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayTooltipRoundsPerSalvo">
+      <English>Number of rounds fired in a single salvo.</English>
+      <French>Nombre de coups tirés par salve.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayHeaderNumberOfSalvos">
+      <English>Number of salvos</English>
+      <French>Nombre de salves</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayTooltipNumberOfSalvos">
+      <English>Total number of salvos of the fire mission.</English>
+      <French>Nombre de salves total de la frappe d'artillerie.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayHeaderDelayOfRounds">
+      <English>Rounds delay</English>
+      <French>Délai des tirs</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayTooltipDelayOfRounds">
+      <English>Delay between two rounds in a same salvo.</English>
+      <French>Délai entre deux coups au sein d'une même salve.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayHeaderDelayOfSalvos">
+      <English>Salvos delay</English>
+      <French>Délai des salves</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayTooltipDelayOfSalvos">
+      <English>Waiting time between the end of a salvo and the beginning of the next one.</English>
+      <French>Temps d'attente entre la fin d'une salve et le début de la suivante.</French>
+    </Key>
   </Package>
 </Project>

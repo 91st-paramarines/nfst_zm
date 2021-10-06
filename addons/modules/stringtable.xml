@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="NFST">
+  <Package name="Modules">
+    <Key ID="STR_NFST_Modules_Component">
+      <English>91st Paramarines - Utility Modules</English>
+      <French>91st Paramarines - Modules Utilitaires</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_Category_DisplayName">
+      <English>91st Paramarines</English>
+      <French>91st Paramarines</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayName">
+      <English>Fire Mission</English>
+      <French>Mission de tir</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_Description">
+      <English>Spawns the specified artillery fire mission at the module location.</English>
+      <French>Créé une frappe d'artillerie à l'endroit du module.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_SupplyDrop_DisplayName">
+      <English>Supply Drop</English>
+      <French>Ravitaillement Aéroporté</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_SupplyDrop_Description">
+      <English>Request a supply drop at the module location.</English>
+      <French>Requérir un ravitaillement aéroporté à l'endroit du module.</French>
+    </Key>
+  </Package>
+</Project>

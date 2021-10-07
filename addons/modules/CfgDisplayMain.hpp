@@ -16,4 +16,5 @@ class RscEdit;
 class RscXSliderH;
 
 #include "CfgDisplayModuleFireMission.hpp"
+#include "CfgDisplayModuleAirStrike.hpp"
 #include "CfgDisplayModuleSupplyDrop.hpp"

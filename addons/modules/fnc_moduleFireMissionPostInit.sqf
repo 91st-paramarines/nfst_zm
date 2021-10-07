@@ -8,6 +8,7 @@ private _nbSalvos     = sliderPosition 1905;
 private _delayRounds  = sliderPosition 1904;
 private _delaySalvos  = sliderPosition 1906;
 
+//TODO : reprogram BIS_fnc_fireSupportVirtual so that rounds can be fired simultaneously
 [_pos, _ordnance, _splashRadius, _nbRounds, _delayRounds, {false}, _safeRadius] spawn BIS_fnc_fireSupportVirtual;
 
 closeDialog 0;

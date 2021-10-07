@@ -34,6 +34,33 @@ class CfgVehicles
 	};
 
 
+	class NFST_ModuleAirStrike: Module_F
+	{
+		scope        = 1; // 1 : hide, 2 : show
+    scopeCurator = 2;
+		displayName  = CSTRING(AirStrike_DisplayName); //TODO
+		vehicleClass = "Modules";
+		category     = ADDON;
+//    icon         = "\nfst_modules\data\icon.paa";
+
+		function         = "nfst_fnc_moduleAirStrikePreInit";
+		functionPriority = 1; // Lower number is higher priority
+		isGlobal         = 1; // 0 : server only, 1 : global, 2 : persistent global
+
+		isTriggerActivated = 1;
+		isDisposable       = 0;
+		is3DEN             = 0;
+
+		// Menu displayed when the module is placed or double-clicked on by Zeus
+    curatorInfoType = "RscDisplayAttributesNfstModuleAirStrike";
+
+		class ModuleDescription: ModuleDescription
+		{
+			description = CSTRING(AirStrike_Description); //TODO
+		};
+	};
+
+
 /*
 	class NFST_ModuleSupplyDrop: Module_F
 	{

@@ -6,6 +6,8 @@ class CfgFunctions
     {
       PATHTO_FNC(moduleFireMissionPreInit);
       PATHTO_FNC(moduleFireMissionPostInit);
+      PATHTO_FNC(moduleAirStrikePreInit);
+      PATHTO_FNC(moduleAirStrikePostInit);
 
       PATHTO_FNC(moduleSupplyDropPreInit);
       PATHTO_FNC(moduleSupplyDropPostInit);

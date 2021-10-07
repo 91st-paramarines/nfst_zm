@@ -14,7 +14,7 @@ class CfgPatches
 			requiredAddons[] = { "CBA_main" };
 
 			// List of added objects and weapons
-			units[] = {"NFST_ModuleFireMission"};
+			units[] = {"NFST_ModuleFireMission", "NFST_ModuleAirStrike"};
 			weapons[] = {};
 	};
 };

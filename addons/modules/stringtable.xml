@@ -9,22 +9,6 @@
       <English>91st Paramarines</English>
       <French>91st Paramarines</French>
     </Key>
-    <Key ID="STR_NFST_Modules_FireMission_DisplayName">
-      <English>Fire Mission</English>
-      <French>Mission de tir</French>
-    </Key>
-    <Key ID="STR_NFST_Modules_FireMission_Description">
-      <English>Spawns the specified artillery fire mission at the module location.</English>
-      <French>Créé une frappe d'artillerie à l'endroit du module.</French>
-    </Key>
-    <Key ID="STR_NFST_Modules_SupplyDrop_DisplayName">
-      <English>Supply Drop</English>
-      <French>Ravitaillement Aéroporté</French>
-    </Key>
-    <Key ID="STR_NFST_Modules_SupplyDrop_Description">
-      <English>Request a supply drop at the module location.</English>
-      <French>Requérir un ravitaillement aéroporté à l'endroit du module.</French>
-    </Key>
     <Key ID="STR_NFST_Modules_DisplayButtonCancel">
       <English>Cancel</English>
       <French>Annuler</French>
@@ -32,6 +16,14 @@
     <Key ID="STR_NFST_Modules_DisplayButtonOk">
       <English>Ok</English>
       <French>Ok</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_DisplayName">
+      <English>Fire Mission</English>
+      <French>Mission de tir</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_FireMission_Description">
+      <English>Spawns the specified artillery fire mission at the module location.</English>
+      <French>Créé une frappe d'artillerie à l'endroit du module.</French>
     </Key>
     <Key ID="STR_NFST_Modules_FireMission_DisplayHeaderSplashRadius">
       <English>Splash radius</English>
@@ -88,6 +80,157 @@
     <Key ID="STR_NFST_Modules_FireMission_DisplayTooltipDelayOfSalvos">
       <English>Waiting time between the end of a salvo and the beginning of the next one.</English>
       <French>Temps d'attente entre la fin d'une salve et le début de la suivante.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayName">
+      <English>Air strike</English>
+      <French>Frappe aérienne</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_Description">
+      <English>Spawns the specified air strike at the module location.</English>
+      <French>Créé une frappe aérienne à l'endroit du module.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayFramePlane">
+      <English>Bomber plane</English>
+      <French>Bombardier</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderPlaneType">
+      <English>Type</English>
+      <French>Type</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipPlaneType">
+      <English>The model of plane that will perform the air strike.</English>
+      <French>Le modèle d'avion qui va réaliser la frappe aérienne.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderPlaneNumber">
+      <English>Number</English>
+      <French>Nombre</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipPlaneNumber">
+      <English>How many planes are involved in the air strike?</English>
+      <French>Combien d'avions vont participer à la frappe aérienne?</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderFormation">
+      <English>Formation</English>
+      <French>Formation</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipFormation">
+      <English>The bombing planes' formation.</English>
+      <French>La formation des des bombardiers.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderBombType">
+      <English>Type</English>
+      <French>Type</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipBombType">
+      <English>The type of ordnance to be used in the air strike.</English>
+      <French>Le type de munition à utiliser pour la frappe aérienne.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayFrameBomb">
+      <English>Ordnance</English>
+      <French>Bombe</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderBombNumber">
+      <English>Number</English>
+      <French>Nombre</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipBombNumber">
+      <English>How many bombs does each plane drop?</English>
+      <French>Combien de bombes largue chaque avion?</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderDelay">
+      <English>Delay</English>
+      <French>Temps d'attente</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipDelay">
+      <English>The waiting time between the dropping of two bombs by a same plane, in seconds.</English>
+      <French>Le temps d'attente entre le larguage successif de deux bombes par un même avion, en secondes.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderSpread">
+      <English>Spread</English>
+      <French>Étalement</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipSpread">
+      <English>Approximate ground distance between two consecutive impacts, in meters.</English>
+      <French>Distance au sol approximative entre deux impacts successifs, en mètres.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayFrameFlightPlan">
+      <English>Flight plan</English>
+      <French>Plan de vol</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderFlightHeight">
+      <English>Altitude</English>
+      <French>Altitude</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipFlightHeight">
+      <English>Flight and drop altitude for all planes, in meters.</English>
+      <French>Altitude de vol et de bombardement pour tous les avions, en mètres.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderFlightSpeed">
+      <English>Speed</English>
+      <French>Vitesse</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipFlightSpeed">
+      <English>Flight and drop speed for all planes, in kilometers per hour.</English>
+      <French>Vitesse de vol et de bombardement pour tous les avions, en kilomètres par heure.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderSpawnBearing">
+      <English>Incoming bearing</English>
+      <French>Azimuth d'arrivée</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipSpawnBearing">
+      <English>Bearing of the plane's spawn point, relative to the module.</English>
+      <French>Azimuth du point d'apparition des avions, relatif au module.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderDespawnBearing">
+      <English>Outgoing bearing</English>
+      <French>Azimuth de sortie</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipDespawnBearing">
+      <English>Bearing of the plane's despawn point, relative to the module.</English>
+      <French>Azimuth du point de disparition des avions, relatif au module.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderDespawnDistance">
+      <English>Despawn distance</English>
+      <French>Distance de disparition</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipDespawnDistance">
+      <English>Distance the planes travel after dropping their bombs and before they are despawned.</English>
+      <French>Distance que parcourent les avions après le bombardement, avant d'être supprimés.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderETA">
+      <English>ETA</English>
+      <French>ETA</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipETA">
+      <English>Approximate time before the planes arrive at the target, in seconds.</English>
+      <French>Durée approximative avant que les avions arrivent à la cible, en secondes.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderApproach">
+      <English>Attack vector</English>
+      <French>Vecteur d'attaque</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipApproach">
+      <English>Bearing along which the planes will drop their bombs, in degrees. This is the 360 complement to the incoming vector.</English>
+      <French>Azimuth de larguage des bombes, en degrés. Il s'agit du complémentaire à 360 de l'azimuth d'arrivée.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayHeaderSpawnDistance">
+      <English>Spawn distance</English>
+      <French>Distance d'arrivée</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_DisplayTooltipSpawnDistance">
+      <English>Distance the planes travel before dropping their bombs.</English>
+      <French>Distance que parcourent les avions avant le bombardement.</French>
+    </Key>
+
+
+
+    <Key ID="STR_NFST_Modules_SupplyDrop_DisplayName">
+      <English>Supply Drop</English>
+      <French>Ravitaillement Aéroporté</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_SupplyDrop_Description">
+      <English>Request a supply drop at the module location.</English>
+      <French>Requérir un ravitaillement aéroporté à l'endroit du module.</French>
     </Key>
   </Package>
 </Project>

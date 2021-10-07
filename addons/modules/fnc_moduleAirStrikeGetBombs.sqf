@@ -1,7 +1,7 @@
-_cfg = "getnumber( _x >> 'scope' ) isEqualTo 2" configClasses (configFile >> "CfgWeapons");
+_cfg = "true" configClasses (configFile >> "CfgWeapons"); 
 for "_i" from 0 to ((count _cfg)-1) do
 {
-  if (isClass ((_cfg select _i) )) then
+  if (isClass (_cfg select _i)) then
   {
     _cfgNam = configName (_cfg select _i);
     if (["bomb", _cfgNam] call BIS_fnc_inString) then

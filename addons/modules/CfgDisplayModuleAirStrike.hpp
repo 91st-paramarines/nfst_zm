@@ -27,7 +27,7 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			y = 0.225 * safezoneH + safezoneY;
 			w = 0.340312 * safezoneW;
 			h = 0.044 * safezoneH;
-			sizeEx = 0.05 * safezoneH * GUI_GRID_H;
+			sizeEx = 0.05 * safezoneH;
 		};
 		class BodyBackground: RscText
 		{
@@ -42,37 +42,12 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 		class FramePlane: RscFrame
 		{
 			idc = 1800;
+
 			text = CSTRING(AirStrike_DisplayFramePlane);
 			x = 0.335 * safezoneW + safezoneX;
 			y = 0.28 * safezoneH + safezoneY;
 			w = 0.33 * safezoneW;
 			h = 0.11 * safezoneH;
-		};
-		class ButtonCancel: RscButtonMenu
-		{
-			idc = 2400;
-			action = "closeDialog 0";
-
-			text = CSTRING(DisplayButtonCancel);
-			x = 0.335 * safezoneW + safezoneX;
-			y = 0.797 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.022 * safezoneH;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.8};
-		};
-		class ButtonOk: RscButtonMenu
-		{
-			idc = 2401;
-			action = "execVM '\x\nfst\addons\modules\fnc_moduleAirStrikePostInit.sqf';";
-
-			text = CSTRING(DisplayButtonOk);
-			x = 0.592812 * safezoneW + safezoneX;
-			y = 0.797 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.022 * safezoneH;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.8};
 		};
 		class HeaderPlaneType: RscText
 		{
@@ -84,6 +59,17 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			w = 0.061875 * safezoneW;
 			h = 0.022 * safezoneH;
 			tooltip = CSTRING(AirStrike_DisplayTooltipPlaneType);
+		};
+		class ComboPlaneType: RscCombo
+		{
+			idc = 2100;
+
+			x = 0.407187 * safezoneW + safezoneX;
+			y = 0.291 * safezoneH + safezoneY;
+			w = 0.252656 * safezoneW;
+			h = 0.022 * safezoneH;
+
+			onload = "2100 execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeGetPlanes.sqf';";
 		};
 		class HeaderNumberOfPlanes: RscText
 		{
@@ -99,9 +85,9 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 		class SliderNumberOfPlanes: RscXSliderH
 		{
 			idc = 1900;
-			sliderRange[] = {1,50};
+			sliderRange[] = {1,9};
 			sliderStep = 1;
-			sliderPosition = 5;
+			sliderPosition = 1;
 			onSliderPosChanged = "ctrlSetText [1400, str (_this select 1)]";
 
 			x = 0.407187 * safezoneW + safezoneX;
@@ -120,16 +106,15 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			w = 0.020625 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
-		class ComboPlaneType: RscCombo
+		class HeaderFormation: RscText
 		{
-			idc = 2100;
-
-			x = 0.407187 * safezoneW + safezoneX;
-			y = 0.291 * safezoneH + safezoneY;
-			w = 0.252656 * safezoneW;
+			idc = 1005;
+			text = CSTRING(AirStrike_DisplayHeaderFormation);
+			x = 0.335 * safezoneW + safezoneX;
+			y = 0.357 * safezoneH + safezoneY;
+			w = 0.061875 * safezoneW;
 			h = 0.022 * safezoneH;
-
-			onload = "2100 execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeGetPlanes.sqf';";
+			tooltip = CSTRING(AirStrike_DisplayTooltipFormation);
 		};
 		class ComboFormation: RscCombo
 		{
@@ -144,28 +129,21 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			{
 				class Wedge
 				{
-					text = "Wedge";
+					text = "Wedge"; //TODO
+					data = "Wedge";
 					default = 1;
 				};
 				class Column
 				{
-					text = "Column";
+					text = "Column"; //TODO
+					data = "Column";
 				};
 				class Line
 				{
-					text = "Line";
+					text = "Line"; //TODO
+					data = "Line";
 				};
 			};
-		};
-		class HeaderFormation: RscText
-		{
-			idc = 1005;
-			text = CSTRING(AirStrike_DisplayHeaderFormation);
-			x = 0.335 * safezoneW + safezoneX;
-			y = 0.357 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
-			h = 0.022 * safezoneH;
-			tooltip = CSTRING(AirStrike_DisplayTooltipFormation);
 		};
 		class FrameOrdnance: RscFrame
 		{
@@ -212,9 +190,9 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 		class SliderBombNumber: RscXSliderH
 		{
 			idc = 1901;
-			sliderRange[] = {1,50};
+			sliderRange[] = {1,32};
 			sliderStep = 1;
-			sliderPosition = 5;
+			sliderPosition = 4;
 			onSliderPosChanged = "ctrlSetText [1401, str (_this select 1)]";
 
 			x = 0.407187 * safezoneW + safezoneX;
@@ -227,7 +205,7 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			idc = 1401;
 			canModify = 0;
 
-			text = "1"; //--- ToDo: Localize;
+			text = "4"; //--- ToDo: Localize;
 			x = 0.639219 * safezoneW + safezoneX;
 			y = 0.445 * safezoneH + safezoneY;
 			w = 0.020625 * safezoneW;
@@ -247,10 +225,10 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 		class SliderBombDelay: RscXSliderH
 		{
 			idc = 1902;
-			sliderRange[] = {1,50};
+			sliderRange[] = {1,5};
 			sliderStep = 1;
-			sliderPosition = 5;
-			onSliderPosChanged = "ctrlSetText [1402, str (_this select 1)]";
+			sliderPosition = 1;
+			onSliderPosChanged = "ctrlSetText [1402, str (_this select 1)]; ctrlSetText [1403, str round ((_this select 1) * ((sliderPosition 1904)*1000/3600))];";
 
 			x = 0.407187 * safezoneW + safezoneX;
 			y = 0.478 * safezoneH + safezoneY;
@@ -268,17 +246,6 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			w = 0.0154688 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
-		class TextSpread: RscEdit
-		{
-			idc = 1403;
-			canModify = 0;
-
-			text = "100"; //--- ToDo: Localize;
-			x = 0.639219 * safezoneW + safezoneX;
-			y = 0.478 * safezoneH + safezoneY;
-			w = 0.020625 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
 		class HeaderSpread: RscText
 		{
 			idc = 1009;
@@ -289,6 +256,17 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			w = 0.113437 * safezoneW;
 			h = 0.022 * safezoneH;
 			tooltip = CSTRING(AirStrike_DisplayTooltipSpread);
+		};
+		class TextSpread: RscEdit
+		{
+			idc = 1403;
+			canModify = 0;
+
+			text = "100"; //--- ToDo: Localize;
+			x = 0.639219 * safezoneW + safezoneX;
+			y = 0.478 * safezoneH + safezoneY;
+			w = 0.020625 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
 		class FrameFlightPlan: RscFrame
 		{
@@ -313,9 +291,9 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 		class SliderFlightHeight: RscXSliderH
 		{
 			idc = 1903;
-			sliderRange[] = {1,50};
+			sliderRange[] = {100,1000};
 			sliderStep = 1;
-			sliderPosition = 5;
+			sliderPosition = 150;
 			onSliderPosChanged = "ctrlSetText [1404, str (_this select 1)]";
 
 			x = 0.407187 * safezoneW + safezoneX;
@@ -328,7 +306,7 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			idc = 1404;
 			canModify = 0;
 
-			text = "1"; //--- ToDo: Localize;
+			text = "150"; //--- ToDo: Localize;
 			x = 0.628906 * safezoneW + safezoneX;
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.0309375 * safezoneW;
@@ -348,10 +326,10 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 		class SliderFlightSpeed: RscXSliderH
 		{
 			idc = 1904;
-			sliderRange[] = {1,50};
+			sliderRange[] = {80,500};
 			sliderStep = 1;
-			sliderPosition = 5;
-			onSliderPosChanged = "ctrlSetText [1405, str (_this select 1)]";
+			sliderPosition = 120;
+			onSliderPosChanged = "ctrlSetText [1405, str (_this select 1)]; ctrlSetText [1410, str round ((sliderPosition 1906)/((_this select 1)*1000/3600))]; ctrlSetText [1403, str round ((sliderPosition 1902) * ((_this select 1)*1000/3600))];";
 
 			x = 0.407187 * safezoneW + safezoneX;
 			y = 0.566 * safezoneH + safezoneY;
@@ -363,7 +341,7 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			idc = 1405;
 			canModify = 0;
 
-			text = "1"; //--- ToDo: Localize;
+			text = "120"; //--- ToDo: Localize;
 			x = 0.628906 * safezoneW + safezoneX;
 			y = 0.566 * safezoneH + safezoneY;
 			w = 0.0309375 * safezoneW;
@@ -383,10 +361,10 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 		class SliderSpawnBearing: RscXSliderH
 		{
 			idc = 1905;
-			sliderRange[] = {1,50};
+			sliderRange[] = {0,359};
 			sliderStep = 1;
-			sliderPosition = 5;
-			onSliderPosChanged = "ctrlSetText [1406, str (_this select 1)]";
+			sliderPosition = 180;
+			onSliderPosChanged = "ctrlSetText [1406, str (_this select 1)]; ctrlSetText [1411, str (((_this select 1)+180)%360)];";
 
 			x = 0.407187 * safezoneW + safezoneX;
 			y = 0.599 * safezoneH + safezoneY;
@@ -398,10 +376,34 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			idc = 1406;
 			canModify = 0;
 
-			text = "100"; //--- ToDo: Localize;
+			text = "180"; //--- ToDo: Localize;
 			x = 0.628906 * safezoneW + safezoneX;
 			y = 0.599 * safezoneH + safezoneY;
 			w = 0.0309375 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class HeaderSpawnDistance: RscText
+		{
+			idc = 1017;
+
+			text = CSTRING(AirStrike_DisplayHeaderSpawnDistance);
+			x = 0.335 * safezoneW + safezoneX;
+			y = 0.632 * safezoneH + safezoneY;
+			w = 0.061875 * safezoneW;
+			h = 0.022 * safezoneH;
+			tooltip = CSTRING(AirStrike_DisplayTooltipSpawnDistance);
+		};
+		class SliderSpawnDistance: RscXSliderH
+		{
+			idc = 1906;
+			sliderRange[] = {1000,10000};
+			sliderStep = 1;
+			sliderPosition = 500;
+			onSliderPosChanged = "ctrlSetText [1407, str (_this select 1)]; ctrlSetText [1410, str round ((_this select 1) / ((sliderPosition 1904)*1000/3600))];";
+
+			x = 0.407187 * safezoneW + safezoneX;
+			y = 0.632 * safezoneH + safezoneY;
+			w = 0.20625 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
 		class TextSpawnDistance: RscEdit
@@ -409,7 +411,7 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			idc = 1407;
 			canModify = 0;
 
-			text = "100"; //--- ToDo: Localize;
+			text = "1000"; //--- ToDo: Localize;
 			x = 0.628906 * safezoneW + safezoneX;
 			y = 0.632 * safezoneH + safezoneY;
 			w = 0.0309375 * safezoneW;
@@ -426,16 +428,29 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			h = 0.022 * safezoneH;
 			tooltip = CSTRING(AirStrike_DisplayTooltipDespawnBearing);
 		};
-		class HeaderSpawnDistance: RscText
+		class SliderDespawnBearing: RscXSliderH
 		{
-			idc = 1017;
+			idc = 1907;
+			sliderRange[] = {0,359};
+			sliderStep = 1;
+			sliderPosition = 0;
+			onSliderPosChanged = "ctrlSetText [1408, str (_this select 1)]";
 
-			text = CSTRING(AirStrike_DisplayHeaderSpawnDistance);
-			x = 0.335 * safezoneW + safezoneX;
-			y = 0.632 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			x = 0.407187 * safezoneW + safezoneX;
+			y = 0.665 * safezoneH + safezoneY;
+			w = 0.20625 * safezoneW;
 			h = 0.022 * safezoneH;
-			tooltip = CSTRING(AirStrike_DisplayTooltipSpawnDistance);
+		};
+		class TextDespawnBearing: RscEdit
+		{
+			idc = 1408;
+			canModify = 0;
+
+			text = "0"; //--- ToDo: Localize;
+			x = 0.628906 * safezoneW + safezoneX;
+			y = 0.665 * safezoneH + safezoneY;
+			w = 0.0309375 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
 		class HeaderDespawnDistance: RscText
 		{
@@ -448,15 +463,17 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			h = 0.022 * safezoneH;
 			tooltip = CSTRING(AirStrike_DisplayTooltipDespawnDistance);
 		};
-		class TextDespawnBearing: RscEdit
+		class SliderDespawnDistance: RscXSliderH
 		{
-			idc = 1408;
-			canModify = 0;
+			idc = 1908;
+			sliderRange[] = {500,10000};
+			sliderStep = 1;
+			sliderPosition = 1500;
+			onSliderPosChanged = "ctrlSetText [1409, str (_this select 1)]";
 
-			text = "100"; //--- ToDo: Localize;
-			x = 0.628906 * safezoneW + safezoneX;
-			y = 0.665 * safezoneH + safezoneY;
-			w = 0.0309375 * safezoneW;
+			x = 0.407187 * safezoneW + safezoneX;
+			y = 0.698 * safezoneH + safezoneY;
+			w = 0.20625 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
 		class TextDespawnDistance: RscEdit
@@ -464,49 +481,10 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			idc = 1409;
 			canModify = 0;
 
-			text = "100"; //--- ToDo: Localize;
+			text = "1500"; //--- ToDo: Localize;
 			x = 0.628906 * safezoneW + safezoneX;
 			y = 0.698 * safezoneH + safezoneY;
 			w = 0.0309375 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-		class SliderSpawnDistance: RscXSliderH
-		{
-			idc = 1906;
-			sliderRange[] = {1,50};
-			sliderStep = 1;
-			sliderPosition = 5;
-			onSliderPosChanged = "ctrlSetText [1407, str (_this select 1)]";
-
-			x = 0.407187 * safezoneW + safezoneX;
-			y = 0.632 * safezoneH + safezoneY;
-			w = 0.20625 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-		class SliderDespawnBearing: RscXSliderH
-		{
-			idc = 1907;
-			sliderRange[] = {1,50};
-			sliderStep = 1;
-			sliderPosition = 5;
-			onSliderPosChanged = "ctrlSetText [1408, str (_this select 1)]";
-
-			x = 0.407187 * safezoneW + safezoneX;
-			y = 0.665 * safezoneH + safezoneY;
-			w = 0.20625 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-		class SliderDespawnDistance: RscXSliderH
-		{
-			idc = 1908;
-			sliderRange[] = {1,50};
-			sliderStep = 1;
-			sliderPosition = 5;
-			onSliderPosChanged = "ctrlSetText [1409, str (_this select 1)]";
-
-			x = 0.407187 * safezoneW + safezoneX;
-			y = 0.698 * safezoneH + safezoneY;
-			w = 0.20625 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
 		class HeaderETA: RscText
@@ -547,11 +525,37 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			idc = 1411;
 			canModify = 0;
 
-			text = "1"; //--- ToDo: Localize;
+			text = "0"; //--- ToDo: Localize;
 			x = 0.613437 * safezoneW + safezoneX;
 			y = 0.753 * safezoneH + safezoneY;
 			w = 0.0309375 * safezoneW;
 			h = 0.022 * safezoneH;
+		};
+		class ButtonCancel: RscButtonMenu
+		{
+			idc = 2400;
+			action = "closeDialog 0";
+
+			text = CSTRING(DisplayButtonCancel);
+			x = 0.335 * safezoneW + safezoneX;
+			y = 0.797 * safezoneH + safezoneY;
+			w = 0.0721875 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.8};
+		};
+		class ButtonOk: RscButtonMenu
+		{
+			idc = 2401;
+			action = "execVM '\x\nfst\addons\modules\fnc_moduleAirStrikePostInit.sqf';";
+
+			text = CSTRING(DisplayButtonOk);
+			x = 0.592812 * safezoneW + safezoneX;
+			y = 0.797 * safezoneH + safezoneY;
+			w = 0.0721875 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.8};
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END

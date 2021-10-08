@@ -40,20 +40,33 @@ private _despawnPosX = _targetX + _despawnDeltaX;
 private _despawnPosY = _targetY + _despawnDeltaY;
 
 // 2 TODO
-private _formationPositionOffsets = [_formation, _planeNumber, _bearingToTarget] call nfst_fnc_commonComputeFormationOffsets;
-systemChat str _formationPositionOffsets;
+private _formationPositionOffsetsSpawn   = [_formation, _planeNumber, _bearingToTarget] call nfst_fnc_commonComputeFormationOffsets;
+private _formationPositionOffsetsDespawn = [_formation, _planeNumber, _despawnBearing ] call nfst_fnc_commonComputeFormationOffsets;
+
 // 3 TODO
-private _planePositions   = [];
-private _relativePosition = [];
+private _spawnPos   = [];
+private _despawnPos = [];
+private _bombingPos = [];
+private _planePositions = [];
+private _offsetSpawnX = 0;
+private _offsetSpawnY = 0;
+private _offsetDespawnX = 0;
+private _offsetDespawnY = 0;
+
+for "_i" from 1 to _planeNumber do
 {
-  _relativePosition = // TODO : add a tad of randomness in that
-  [
-    _spawnPosX + (_x select 0),
-    _spawnPosY + (_x select 1),
-    0
-  ];
-  _planePositions append [_relativePosition]; // Adjust for relative to absolute (bearing base base-)
-} forEach _formationPositionOffsets;
+  _offsetSpawnX   = _formationPositionOffsetsSpawn   select (_i-1) select 0;
+  _offsetSpawnY   = _formationPositionOffsetsSpawn   select (_i-1) select 1;
+  _offsetDespawnX = _formationPositionOffsetsDespawn select (_i-1) select 0;
+  _offsetDespawnY = _formationPositionOffsetsDespawn select (_i-1) select 1;
+
+  _spawnPos   = [_spawnPosX   + _offsetSpawnX  , _spawnPosY   + _offsetSpawnY  , 0];
+  _bombingPos = [_targetX     + _offsetSpawnX  , _targetY     + _offsetSpawnY  , 0];
+  _despawnPos = [_despawnPosX + _offsetDespawnX, _despawnPosY + _offsetDespawnY, 0];
+
+  _planePositions append [[_spawnPos, _bombingPos, _despawnPos]];
+};
+
 
 // 4
 private _planeSpeedX = _flightSpeed * cos(_angleToSpawn+180);
@@ -62,9 +75,22 @@ private _planeSpeedZ = 0;
 private _planeSpeedVector = [_planeSpeedX, _planeSpeedY, _planeSpeedZ];
 
 {
-    private _plane = _planeType createVehicle _x;
-    //[_plane, _flightHeight, _x, "ATL"] call BIS_fnc_setHeight;
+    _spawnPos   = _x select 0;
+    _bombingPos = _x select 1;
+    _despawnPos = _x select 2;
+    private _plane = _planeType createVehicle _spawnPos;
+    [_plane, _flightHeight, _spawnPos, "ATL"] call BIS_fnc_setHeight;
     _plane setDir _bearingToTarget;
-    //_plane setVelocity _planeSpeedVector;
-    //_plane flyInHeight _flightHeight;
+    _plane setVelocity _planeSpeedVector;
+    _plane flyInHeight _flightHeight;
+
+    private _planeGroup = createVehicleCrew _plane;
+    driver _plane disableAI "FSM";
+
+    private _bombingWP = _planeGroup addWaypoint [_bombingPos, 1];
+    _bombingWP setWaypointCompletionRadius 10;
+    _bombingWP setWaypointStatements
+    ["true", format ["[this, %1, %2, %3, %4] execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeDoBombingRun.sqf';", str _bombType, _bombNumber, _bombDelay, _flightHeight]];
+
+
 } forEach _planePositions;

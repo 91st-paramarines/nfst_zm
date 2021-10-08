@@ -8,6 +8,9 @@ class CfgFunctions
       PATHTO_FNC(moduleFireMissionPostInit);
       PATHTO_FNC(moduleAirStrikePreInit);
       PATHTO_FNC(moduleAirStrikePostInit);
+      PATHTO_FNC(moduleAirStrikeDoBombingRun);
+      PATHTO_FNC(moduleAirStrikeGetBomberPlanes);
+
       PATHTO_FNC(commonComputeFormationOffsets);
       PATHTO_FNC(commonRebase2D);
 

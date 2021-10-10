@@ -70,7 +70,7 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			h = 0.022 * safezoneH;
 
 			onload = "2100 execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeSetBomberPlanes.sqf';";
-			onlbselchanged = "[2102, lbData [2100, lbCurSel 2100]] execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeGetBombs.sqf';";
+			onlbselchanged = "[2102, lbData [2100, lbCurSel 2100]] execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeSetBombs.sqf';";
 		};
 		class HeaderNumberOfPlanes: RscText
 		{
@@ -175,7 +175,7 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			w = 0.252656 * safezoneW;
 			h = 0.022 * safezoneH;
 
-			//onload = "2102 execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeGetBombs.sqf';";
+			onLoad = "ctrlEnable [(_this # 0), false];"; // Grey it out as user must first select a bombing plane
 		};
 		class HeaderBombNumber: RscText
 		{

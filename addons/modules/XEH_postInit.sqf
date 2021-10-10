@@ -1,3 +1,3 @@
 #include "script_component.hpp"
 
-[] call FUNC(moduleAirStrikeGetBomberPlanes);
+[] call FUNC(moduleAirStrikeGetBombsAndPlanes);

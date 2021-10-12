@@ -1,5 +1,7 @@
 params["_formation", "_planeNumber", "_bearing"];
 
+private _formationSpacing = 100;
+
 if (_planeNumber <= 0) then {throw "Number of planes in formation must be at least one."};
 
 private _offsetPlusX  = 0;
@@ -10,19 +12,19 @@ private _isColumn     = 0;
 switch (_formation) do
 {
   case "Wedge" : {
-    _offsetPlusX  =  50 * cos(45);
-    _offsetMinusX = -50 * cos(45);
-    _offsetMinusY = -50 * sin(45);
+    _offsetPlusX  =  _formationSpacing * cos(45);
+    _offsetMinusX = -_formationSpacing * cos(45);
+    _offsetMinusY = -_formationSpacing * sin(45);
   };
   case "Column": {
     _isColumn     = 1;
     _offsetPlusX  = 0;
     _offsetMinusX = 0;
-    _offsetMinusY = -50;
+    _offsetMinusY = -_formationSpacing;
   };
   case "Line"  : {
-    _offsetPlusX  =  50;
-    _offsetMinusX = -50;
+    _offsetPlusX  =  _formationSpacing;
+    _offsetMinusX = -_formationSpacing;
     _offsetMinusY = 0;
   };
   default {throw "Unknown formation."};

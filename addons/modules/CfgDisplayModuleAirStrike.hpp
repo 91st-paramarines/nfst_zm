@@ -70,7 +70,7 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			h = 0.022 * safezoneH;
 
 			onload = "2100 execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeSetBomberPlanes.sqf';";
-			onlbselchanged = "[2102, lbData [2100, lbCurSel 2100]] execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeSetBombs.sqf';";
+			onlbselchanged = "execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeSetInfoFromPlane.sqf';";
 		};
 		class HeaderNumberOfPlanes: RscText
 		{
@@ -176,6 +176,7 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			h = 0.022 * safezoneH;
 
 			onLoad = "ctrlEnable [(_this # 0), false];"; // Grey it out as user must first select a bombing plane
+			onlbselchanged = "execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeSetBombSliderRange.sqf';";
 		};
 		class HeaderBombNumber: RscText
 		{
@@ -191,9 +192,10 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 		class SliderBombNumber: RscXSliderH
 		{
 			idc = 1901;
-			sliderRange[] = {1,32};
+			sliderRange[] = {1,1};
 			sliderStep = 1;
-			sliderPosition = 4;
+			sliderPosition = 1;
+
 			onSliderPosChanged = "ctrlSetText [1401, str (_this select 1)]";
 
 			x = 0.407187 * safezoneW + safezoneX;
@@ -206,7 +208,7 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			idc = 1401;
 			canModify = 0;
 
-			text = "4"; //--- ToDo: Localize;
+			text = "";
 			x = 0.639219 * safezoneW + safezoneX;
 			y = 0.445 * safezoneH + safezoneY;
 			w = 0.020625 * safezoneW;
@@ -226,9 +228,9 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 		class SliderBombDelay: RscXSliderH
 		{
 			idc = 1902;
-			sliderRange[] = {1,5};
-			sliderStep = 1;
-			sliderPosition = 1;
+			sliderRange[] = {0.1,5};
+			sliderStep = 0.1;
+			sliderPosition = 0.5;
 			onSliderPosChanged = "ctrlSetText [1402, str (_this select 1)]; ctrlSetText [1403, str round ((_this select 1) * ((sliderPosition 1904)*1000/3600))];";
 
 			x = 0.407187 * safezoneW + safezoneX;
@@ -307,7 +309,7 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			idc = 1404;
 			canModify = 0;
 
-			text = "150"; //--- ToDo: Localize;
+			text = "150";
 			x = 0.628906 * safezoneW + safezoneX;
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.0309375 * safezoneW;
@@ -327,9 +329,10 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 		class SliderFlightSpeed: RscXSliderH
 		{
 			idc = 1904;
-			sliderRange[] = {80,500};
+			sliderRange[] = {0,0};
 			sliderStep = 1;
-			sliderPosition = 120;
+			sliderPosition = 0;
+			onLoad = "ctrlShow [1904, false];";
 			onSliderPosChanged = "ctrlSetText [1405, str (_this select 1)]; ctrlSetText [1410, str round ((sliderPosition 1906)/((_this select 1)*1000/3600))]; ctrlSetText [1403, str round ((sliderPosition 1902) * ((_this select 1)*1000/3600))];";
 
 			x = 0.407187 * safezoneW + safezoneX;
@@ -342,7 +345,7 @@ class RscDisplayAttributesNfstModuleAirStrike: RscDisplayAttributes
 			idc = 1405;
 			canModify = 0;
 
-			text = "120"; //--- ToDo: Localize;
+			text = "";
 			x = 0.628906 * safezoneW + safezoneX;
 			y = 0.566 * safezoneH + safezoneY;
 			w = 0.0309375 * safezoneW;

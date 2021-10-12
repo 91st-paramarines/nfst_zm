@@ -1,19 +1,10 @@
-params ["_groupLeader", "_bombType", "_bombNumber", "_bombDelay", "_altitude"];
+params ["_groupLeader", "_bombNumber", "_bombDelay", "_activeWeapon", "_fireMode"];
 
 private _plane = vehicle _groupLeader;
-private _planePos = [];
-private _planeSpd = [];
 
-systemChat str _bombType;
-
- for "_i" from 1 to _bombNumber do
- {
-   _planePos = getPos _plane;
-   _planeSpd = velocity _plane;
-
-   _bomb = _bombType createVehicle _planePos;
-   systemChat "Drop";
-   [_bomb, _altitude, _planePos, "ATL"] call BIS_fnc_setHeight;
-
-   uiSleep(_bombDelay);
- };
+for "_i" from 1 to (_bombNumber) do
+{
+  (gunner _plane) forceWeaponFire [_activeWeapon, _fireMode];
+  (driver _plane) forceWeaponFire [_activeWeapon, _fireMode];
+  uiSleep(_bombDelay);
+};

@@ -13,6 +13,8 @@ private _spawnDistance   = sliderPosition 1906;
 private _despawnBearing  = sliderPosition 1907;
 private _despawnDistance = sliderPosition 1908;
 
+closeDialog 0;
+
 /*
 1 - Compute spawn point and despawn point coordinates
 2 - Compute relative formation offsets
@@ -25,14 +27,17 @@ private _despawnDistance = sliderPosition 1908;
 private _angleToSpawn    = 90 - _spawnBearing  ;
 private _angleToDespawn  = 90 - _despawnBearing;
 private _bearingToTarget = (_spawnBearing + 180) % 360;
+private _angleToTarget   = 90 - _bearingToTarget;
 
 private _spawnDeltaX   = _spawnDistance   * cos(_angleToSpawn  );
 private _spawnDeltaY   = _spawnDistance   * sin(_angleToSpawn  );
 private _despawnDeltaY = _despawnDistance * sin(_angleToDespawn);
 private _despawnDeltaX = _despawnDistance * cos(_angleToDespawn);
 
-private _targetX = _targetPos select 0;
-private _targetY = _targetPos select 1;
+private _targetX    = _targetPos select 0;
+private _targetY    = _targetPos select 1;
+private _targetEndX = _targetX + _bombNumber * _bombDelay * (_flightSpeed/3.6) * cos(_angleToTarget);
+private _targetEndY = _targetY + _bombNumber * _bombDelay * (_flightSpeed/3.6) * sin(_angleToTarget);
 
 private _spawnPosX   = _targetX + _spawnDeltaX  ;
 private _spawnPosY   = _targetY + _spawnDeltaY  ;
@@ -47,6 +52,7 @@ private _formationPositionOffsetsDespawn = [_formation, _planeNumber, _despawnBe
 private _spawnPos   = [];
 private _despawnPos = [];
 private _bombingPos = [];
+private _bombingEnd = [];
 private _planePositions = [];
 private _offsetSpawnX = 0;
 private _offsetSpawnY = 0;
@@ -62,35 +68,94 @@ for "_i" from 1 to _planeNumber do
 
   _spawnPos   = [_spawnPosX   + _offsetSpawnX  , _spawnPosY   + _offsetSpawnY  , 0];
   _bombingPos = [_targetX     + _offsetSpawnX  , _targetY     + _offsetSpawnY  , 0];
+  _bombingEnd = [_targetEndX  + _offsetSpawnX  , _targetEndY  + _offsetSpawnY  , 0];
   _despawnPos = [_despawnPosX + _offsetDespawnX, _despawnPosY + _offsetDespawnY, 0];
 
-  _planePositions append [[_spawnPos, _bombingPos, _despawnPos]];
+  _planePositions append [[_spawnPos, _bombingPos, _bombingEnd, _despawnPos]];
 };
 
 
 // 4
-private _planeSpeedX = _flightSpeed * cos(_angleToSpawn+180);
-private _planeSpeedY = _flightSpeed * sin(_angleToSpawn+180);
+private _planeSpeedX = _flightSpeed * cos(_angleToSpawn+180) / 3.6;
+private _planeSpeedY = _flightSpeed * sin(_angleToSpawn+180) / 3.6;
 private _planeSpeedZ = 0;
 private _planeSpeedVector = [_planeSpeedX, _planeSpeedY, _planeSpeedZ];
+systemChat str ((vectorMagnitude _planeSpeedVector) * 3.6);
 
 {
     _spawnPos   = _x select 0;
     _bombingPos = _x select 1;
-    _despawnPos = _x select 2;
+    _bombingEnd = _x select 2;
+    _despawnPos = _x select 3;
+
     private _plane = _planeType createVehicle _spawnPos;
     [_plane, _flightHeight, _spawnPos, "ATL"] call BIS_fnc_setHeight;
     _plane setDir _bearingToTarget;
     _plane setVelocity _planeSpeedVector;
-    _plane flyInHeight _flightHeight;
+    _plane flyInHeightASL [_flightHeight, _flightHeight, _flightHeight];
+    _plane limitSpeed _flightSpeed;
+
+    private _compatibleBombs = missionNamespace getVariable "nfst_moduleAirStrikeBomberPlanes";
+    {
+      if ((_x select 0) == _planeType) then
+      {
+        _planePylons = _x select 3;
+        {
+          _currentPylon = _x select 0;
+          _pylonMagazines = _x select 1;
+          {
+            if ((_x select 0) == _bombType) then
+            {
+              _magazineAmmoCount = _x select 1;
+              _plane setPylonLoadOut [_currentPylon, _bombType];
+              _plane setAmmoOnPylon [_currentPylon, _magazineAmmoCount];
+            };
+          } forEach _pylonMagazines;
+        } forEach _planePylons;
+      };
+    } forEach _compatibleBombs;
+
+    _planeWeapons = weapons _plane;
+    _activeWeapon = "";
+    _fireMode = "";
+    {
+      _cfgWeapon = configName (configFile >> "CfgWeapons" >> _x);
+      _weaponMagazines = getArray (configfile >> "CfgWeapons" >> _cfgWeapon >> "magazines");
+      if (_bombType in _weaponMagazines) then
+      {
+        _activeWeapon = _x;
+        _fireMode = (getArray (configFile >> "CfgWeapons" >> _cfgWeapon >> "modes")) select 0;
+      };
+    } forEach _planeWeapons;
 
     private _planeGroup = createVehicleCrew _plane;
     driver _plane disableAI "FSM";
+    // TODO : not working
+    /*
+    {
+      [_x, [_plane], true] remoteExec ["addCuratorEditableObjects", 2];
+    } forEach allCurators;*/
 
-    private _bombingWP = _planeGroup addWaypoint [_bombingPos, 1];
-    _bombingWP setWaypointCompletionRadius 10;
+
+    _plane addEventHandler
+    ["Fired",
+      {
+        params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+        _unit execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeDoGuideBomb.sqf';
+      }
+    ];
+
+    private _bombingWP = _planeGroup addWaypoint [_bombingPos, -1];
+    _bombingWP setWaypointCompletionRadius 1;
     _bombingWP setWaypointStatements
-    ["true", format ["[this, %1, %2, %3, %4] execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeDoBombingRun.sqf';", str _bombType, _bombNumber, _bombDelay, _flightHeight]];
+    ["true", format ["[this, %1, %2, %3, %4] execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeDoBombingRun.sqf';", _bombNumber, _bombDelay, str _activeWeapon, str _fireMode]];
 
+    private _bombingEndWP = _planeGroup addWaypoint [_bombingEnd, -1];
+    _bombingEndWP setWaypointCompletionRadius 10;
+
+    private _despawnWP = _planeGroup addWaypoint [_despawnPos, 5];
+    _despawnWP setWaypointCompletionRadius 10;
+    _despawnWP setWaypointStatements
+    ["true", "[this] execVM '\x\nfst\addons\modules\fnc_moduleAirStrikeDoDespawn.sqf';"];
 
 } forEach _planePositions;

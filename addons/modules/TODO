@@ -1,0 +1,23 @@
+ArtilleryStrike
+Add tooltips
+Localize strings
+Fix safe zone readout not updating on inferior splash radius update
+Add CBA settings to control default slider values
+
+AirStrike
+It appears drones don't do too well with the module, which isn't surprising as they don't have crew
+Figure out how to hit a target
+Check correctness of calculations for the _bombingEndWP position variable, it looks like my trig is off
+Make _formationDistance an argument of nfst_fnc_commonComputeFormationOffsets
+Implement a switch case in fnc_moduleAirStrikePostInit to calculate different waypoints based on selected formation
+Go over CfgDisplayModuleAirStrike.hpp and check for inconsistencies in dynamic behaviour and initial values
+Make it so changing a plane resets attack speed, bomb type, bomb number and maybe other stuff too
+(Optional) Automatically add created entities to curator
+
+Others
+Add an 3den module to place intel
+Make new mod to add ACRE radios
+
+All
+Optimize
+Nazi align everything

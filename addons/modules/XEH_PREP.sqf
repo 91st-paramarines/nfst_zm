@@ -1,1 +1,2 @@
-PREP(moduleAirStrikeGetBombsAndPlanes);
+PREP(moduleArtilleryStrikePreInit);
+PREP(moduleArtilleryStrikePostInit);

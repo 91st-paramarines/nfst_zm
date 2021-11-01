@@ -1,0 +1,12 @@
+name            = "91st Paramarines - Custom Modules";
+author          = "Kerpollo";
+picture         = "nfst_logo.paa";
+description     = "91st Paramarines - Custom Modules";
+action          = "https://www.91st-paramarines.com/";
+actionName      = "Unit website";
+logo            = "nfst_logo.paa";
+logoOver        = "nfst_logo.paa";
+tooltip         = "91st Paramarines - Custom Modules";
+tooltipOwned    = "91st Paramarines - Custom Modules Owned";
+overview        = "The 91st Paramarines - Custom Modules mod contains a zeus module to help game masters.";
+overviewPicture = "nfst_logo.paa";

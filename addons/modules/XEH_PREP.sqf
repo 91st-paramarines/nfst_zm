@@ -1,2 +1,2 @@
-PREP(moduleArtilleryStrikePreInit);
-PREP(moduleArtilleryStrikePostInit);
+PREP(moduleArtilleryStrikeOnPlace);
+PREP(moduleArtilleryStrikeOnConfirm);

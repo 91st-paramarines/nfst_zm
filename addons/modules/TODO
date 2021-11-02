@@ -1,6 +1,6 @@
 ArtilleryStrike
 Add tooltips
-Localize strings
+USe more MACROS for string attributes
 Fix safe zone readout not updating on inferior splash radius update
 Add CBA settings to control default slider values
 

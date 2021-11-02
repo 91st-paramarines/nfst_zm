@@ -46,7 +46,7 @@ class RscDisplayAttributesNfstModuleArtilleryStrike: RscDisplayAttributes
 		{
 			//idc = 1;
 			text   = "Ok"; //--- ToDo: Localize;
-			action = QUOTE( ARTY_STRIKE_IDC_INPUTS spawn FUNC(moduleArtilleryStrikePostInit) );
+			action = QUOTE( ARTY_STRIKE_IDC_INPUTS spawn FUNC(moduleArtilleryStrikeOnConfirm) );
 
 			x = 0.654687  * safezoneW + safezoneX;
 			y = 0.624361  * safezoneH + safezoneY;
@@ -66,7 +66,7 @@ class RscDisplayAttributesNfstModuleArtilleryStrike: RscDisplayAttributes
 		{
 			idc     = ARTY_STRIKE_IDC_SPLASH_RADIUS_HEADER;
 			text    = "Splash radius"; //--- ToDo: Localize;
-			tooltip = CSTRING();
+			//tooltip = CSTRING();
 
 			x = 0.304062 * safezoneW + safezoneX;
 			y = 0.269    * safezoneH + safezoneY;
@@ -122,7 +122,7 @@ class RscDisplayAttributesNfstModuleArtilleryStrike: RscDisplayAttributes
 		{
 			idc     = ARTY_STRIKE_IDC_SAFE_ZONE_HEADER;
 			text    = "Safe zone radius"; //--- ToDo: Localize;
-			tooltip = CSTRING();
+			//tooltip = CSTRING();
 
 			x = 0.304062 * safezoneW + safezoneX;
 			y = 0.313    * safezoneH + safezoneY;
@@ -160,7 +160,7 @@ class RscDisplayAttributesNfstModuleArtilleryStrike: RscDisplayAttributes
 		{
 			idc     = ARTY_STRIKE_IDC_ORDNANCE_TYPE_HEADER;
 			text    = "Ordnance type"; //--- ToDo: Localize;
-			tooltip = CSTRING();
+			//tooltip = CSTRING();
 
 			x = 0.304688 * safezoneW + safezoneX;
 			y = 0.358333 * safezoneH + safezoneY;
@@ -211,7 +211,7 @@ class RscDisplayAttributesNfstModuleArtilleryStrike: RscDisplayAttributes
 		{
 			idc     = ARTY_STRIKE_IDC_NUMBER_OF_ROUNDS_HEADER;
 			text    = "Number of rounds"; //--- ToDo: Localize;
-			tooltip = CSTRING();
+			//tooltip = CSTRING();
 
 			x = 0.304062 * safezoneW + safezoneX;
 			y = 0.423    * safezoneH + safezoneY;
@@ -248,7 +248,7 @@ class RscDisplayAttributesNfstModuleArtilleryStrike: RscDisplayAttributes
 		{
 			idc     = ARTY_STRIKE_IDC_SALVO_LENGTH_HEADER;
 			text    = "Salvo length"; //--- ToDo: Localize;
-			tooltip = CSTRING();
+			//tooltip = CSTRING();
 
 			x = 0.304062 * safezoneW + safezoneX;
 			y = 0.467    * safezoneH + safezoneY;
@@ -295,7 +295,7 @@ class RscDisplayAttributesNfstModuleArtilleryStrike: RscDisplayAttributes
 		{
 			idc     = ARTY_STRIKE_IDC_NUMBER_OF_SALVOS_HEADER;
 			text    = "Number of salvos"; //--- ToDo: Localize;
-			tooltip = CSTRING();
+			//tooltip = CSTRING();
 
 			x = 0.304062 * safezoneW + safezoneX;
 			y = 0.533    * safezoneH + safezoneY;
@@ -333,7 +333,7 @@ class RscDisplayAttributesNfstModuleArtilleryStrike: RscDisplayAttributes
 		{
 			idc     = ARTY_STRIKE_IDC_COOLDOWN_TIME_HEADER;
 			text    = "Cooldown time"; //--- ToDo: Localize;
-			tooltip = CSTRING();
+			//tooltip = CSTRING();
 
 			x = 0.304688 * safezoneW + safezoneX;
 			y = 0.577778 * safezoneH + safezoneY;

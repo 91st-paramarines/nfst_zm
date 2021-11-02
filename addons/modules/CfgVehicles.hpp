@@ -6,17 +6,19 @@ class CfgVehicles
 		class ModuleDescription;
 	};
 
-
+	// TODO CSTRING
 	class NFST_ModuleArtilleryStrike: Module_F
 	{
-		scope        = 1; // 1 : hide, 2 : show
+		scope        = 1;
     scopeCurator = 2;
-		displayName  = "91st Paramarines - Artillery Strike";
+		// TODO : Localize
+		displayName  = CSTRING(ArtilleryStrike_DisplayName);
 		vehicleClass = "Modules";
 		category     = ADDON;
+		// TODO
 //    icon         = "\nfst_modules\data\icon.paa";
 
-		function         = QFUNC(moduleArtilleryStrikePreInit);
+		function         = QFUNC(moduleArtilleryStrikeOnPlace);
 		functionPriority = 1; // Lower number is higher priority
 		isGlobal         = 1; // 0 : server only, 1 : global, 2 : persistent global
 
@@ -30,7 +32,7 @@ class CfgVehicles
 
 		class ModuleDescription: ModuleDescription
 		{
-			description = "91st Paramarines - Artillery Strike";
+			description = CSTRING(ArtilleryStrike_Description);
 		};
 	};
 };

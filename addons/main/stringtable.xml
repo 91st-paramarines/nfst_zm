@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="NFST">
+  <Package name="Main">
+    <Key ID="STR_NFST_Main_URL">
+      <English>https://www.91st-paramarines.com</English>
+      <French>https://www.91st-paramarines.com</French>
+    </Key>
+  </Package>
+</Project>

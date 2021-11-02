@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="NFST">
   <Package name="Modules">
-    <Key ID="STR_NFST_MainName">
-      <English>91st Paramarines - Utility Modules</English>
-      <French>91st Paramarines - Modules Utilitaires</French>
+    <Key ID="STR_NFST_Modules_Category_DisplayName">
+      <English>91st Paramarines - Utility Module</English>
+      <French>91st Paramarines - Module Utilitaire</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_DisplayName">
+      <English>Artillery Strike</English>
+      <French>Frappe d'artillerie</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_Description">
+      <English>Place on desired splash location.</English>
+      <French>Placer sur la zone d'impact voulue.</French>
     </Key>
   </Package>
 </Project>

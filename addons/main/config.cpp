@@ -5,9 +5,10 @@ class CfgPatches
   class ADDON
   {
     // Meta information for editor
-    name   = "91st Paramarines - Utility Module";
+    //name   = "91st Paramarines - Utility Module";
+    name   = COMPONENT_NAME;
     author = "Kerpollo";
-    url    = "https://www.91st-paramarines.com";
+    url    = ECSTRING(main, URL);
 
     // Requirements data
     requiredVersion  = 1.98;

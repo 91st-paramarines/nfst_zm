@@ -14,7 +14,10 @@ class CfgPatches
 			requiredAddons[] = { "CBA_main" };
 
 			// List of added objects and weapons
-			units[]   = {"NFST_ModuleArtilleryStrike"};
+			units[]   =
+			{
+				QGVAR(ModuleArtilleryStrike)
+			};
 			weapons[] = {};
 	};
 };

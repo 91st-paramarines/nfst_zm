@@ -1,4 +1,4 @@
-class RscDisplayAttributesNfstModuleArtilleryStrike: RscDisplayAttributes
+class GVAR(RscArtilleryStrike): RscDisplayAttributes
 {
 	onSetFocus = "";
 	idc = ARTY_STRIKE_IDC_DISPLAY;

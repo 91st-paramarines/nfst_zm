@@ -1,4 +1,5 @@
 ArtilleryStrike
+Need to add isServer condition to OnConfirm?
 Add tooltips
 USe more MACROS for string attributes
 Fix safe zone readout not updating on inferior splash radius update

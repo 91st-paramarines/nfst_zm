@@ -16,7 +16,8 @@ class CfgPatches
 			// List of added objects and weapons
 			units[]   =
 			{
-				QGVAR(ModuleArtilleryStrike)
+				QGVAR(ModuleArtilleryStrike),
+				QGVAR(ModuleAirStrike)
 			};
 			weapons[] = {};
 	};

@@ -1,6 +1,7 @@
 ArtilleryStrike
 Need to add isServer condition to OnConfirm?
 Add tooltips
+Adjust the bottom sliders Y coordinates
 USe more MACROS for string attributes
 Fix safe zone readout not updating on inferior splash radius update
 Add CBA settings to control default slider values

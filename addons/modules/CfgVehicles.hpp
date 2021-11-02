@@ -35,4 +35,20 @@ class CfgVehicles
 			description = CSTRING(ArtilleryStrike_Description);
 		};
 	};
+
+	class GVAR(ModuleAirStrike): GVAR(zeusModuleBase)
+	{
+		category      = ADDON;
+		displayName   = CSTRING(AirStrike_DisplayName);
+		// TODO
+		//icon         = "\nfst_modules\data\icon.paa";
+		function        = QFUNC(moduleAirStrikeOnPlace);
+		curatorInfoType = QGVAR(RscAirStrike); //TODO
+
+		class ModuleDescription: ModuleDescription
+		{
+			description = CSTRING(AirStrike_Description);
+		};
+	};
+
 };

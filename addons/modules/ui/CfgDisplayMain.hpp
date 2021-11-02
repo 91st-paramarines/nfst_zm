@@ -17,3 +17,4 @@ class RscXSliderH;
 
 #include "CfgDisplayMainMacros.hpp"
 #include "CfgDisplayModuleArtilleryStrike.hpp"
+#include "CfgDisplayModuleAirStrike.hpp"

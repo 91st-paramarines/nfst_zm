@@ -1,3 +1,5 @@
+#include "CfgDisplayModuleArtilleryStrikeMacros.hpp"
+
 class GVAR(RscArtilleryStrike): RscDisplayAttributes
 {
 	onSetFocus = "";
@@ -309,7 +311,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 			idc = ARTY_STRIKE_IDC_NUMBER_OF_SALVOS_SLIDER;
 
 			x = 0.407187 * safezoneW + safezoneX;
-			y = 0.53     * safezoneH + safezoneY;
+			y = 0.533     * safezoneH + safezoneY;
 			w = 0.257813 * safezoneW;
 			h = 0.022    * safezoneH;
 
@@ -347,7 +349,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 			idc = ARTY_STRIKE_IDC_COOLDOWN_TIME_SLIDER;
 
 			x = 0.407187 * safezoneW + safezoneX;
-			y = 0.577    * safezoneH + safezoneY;
+			y = 0.577778 * safezoneH + safezoneY;
 			w = 0.257813 * safezoneW;
 			h = 0.022    * safezoneH;
 
@@ -363,7 +365,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 			text = QUOTE( ARTY_STRIKE_DEFAULT_COOLDOWN_TIME );
 
 			x = 0.665     * safezoneW + safezoneX;
-			y = 0.577     * safezoneH + safezoneY;
+			y = 0.577778  * safezoneH + safezoneY;
 			w = 0.0309375 * safezoneW;
 			h = 0.022     * safezoneH;
 		};

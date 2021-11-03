@@ -1,19 +1,28 @@
 ArtilleryStrike
 Need to add isServer condition to OnConfirm?
 Add tooltips
-Adjust the bottom sliders Y coordinates
 USe more MACROS for string attributes
 Fix safe zone readout not updating on inferior splash radius update
 Add CBA settings to control default slider values
 
+      ^
+      |
+Sync GUI anchors
+      |
+      v
+
 AirStrike
+Add tooltips
+Localize
+Planes seem to fly higher than the input
+Planes initial speed seems to be different than the input
+Ensure that despawn waypoints are spawned further away than the last bomb drop waypoint
 It appears drones don't do too well with the module, which isn't surprising as they don't have crew
 Figure out how to hit a target
 Check correctness of calculations for the _bombingEndWP position variable, it looks like my trig is off
 Make _formationDistance an argument of nfst_fnc_commonComputeFormationOffsets
 Implement a switch case in fnc_moduleAirStrikePostInit to calculate different waypoints based on selected formation
 Go over CfgDisplayModuleAirStrike.hpp and check for inconsistencies in dynamic behaviour and initial values
-Make it so changing a plane resets attack speed, bomb type, bomb number and maybe other stuff too
 (Optional) Automatically add created entities to curator
 
 Others

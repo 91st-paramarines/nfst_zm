@@ -26,31 +26,27 @@ private _flightHeight     = _dropHeight + getTerrainHeightASL _targetPos;
 private _formationPositionOffsetsSpawn   = [_formation, _planeNumber, _bearingToTarget] call nfst_fnc_commonComputeFormationOffsets;
 private _formationPositionOffsetsDespawn = [_formation, _planeNumber, _despawnBearing ] call nfst_fnc_commonComputeFormationOffsets;
 private _spawnPos   = _targetPos getPos [_spawnDistance  , _spawnBearing  ];
+private _bombingPos = _targetPos;
 private _despawnPos = _targetPos getPos [_despawnDistance, _despawnBearing];
 
 // Package it all
 private _planePositions = [];
 for "_i" from 0 to _planeNumber-1 do
 {
-  private _bombingPos = [];
-  private _targets    = [];
+  private _targets = [];
   for "_j" from 0 to _bombNumber-1 do
   {
     private _formationCorrected = _targetPos vectorAdd (_formationPositionOffsetsSpawn select _i);
     private _distanceCorrection = _j * _bombDelay;
     private _bearingCorrection  = [[_distanceCorrection, 0, 0], 90 - _spawnBearing, 2] call BIS_fnc_rotateVector3D;
     private _movementCorrected  = _formationCorrected vectorAdd _bearingCorrection;
-    private _glideBearingCorrection = [[-500 + _j * _bombDelay, 0, 0], 90 - _spawnBearing, 2] call BIS_fnc_rotateVector3D;
-    private _glideCorrected     = _movementCorrected vectorAdd _glideBearingCorrection;
-
-    _bombingPos append [_glideCorrected];
     _targets append [_movementCorrected];
   };
 
   _planePositions append
   [[
       _spawnPos   vectorAdd (_formationPositionOffsetsSpawn   select _i),
-      _bombingPos,
+      _bombingPos vectorAdd (_formationPositionOffsetsSpawn   select _i),
       _despawnPos vectorAdd (_formationPositionOffsetsDespawn select _i),
       _targets
   ]];
@@ -70,8 +66,8 @@ for "_i" from 0 to _planeNumber-1 do
     _plane setVelocity _planeSpeedVector;
     _plane flyInHeightASL [_flightHeight, _flightHeight, _flightHeight];
     _plane limitSpeed _flightSpeed;
-
     private _planeGroup = createVehicleCrew _plane;
+    driver _plane disableAI "FSM";
 
     // Set the plane's pylons with the requested ordnance
     private _compatibleBombs = missionNamespace getVariable "nfst_moduleAirStrikeBomberPlanes";
@@ -108,21 +104,12 @@ for "_i" from 0 to _planeNumber-1 do
       };
     } forEach _planeWeapons;
 
-    // Set bomb drop waypoints
-    {
-      private _bombingWP = _planeGroup addWaypoint [_x, 5];
-      _bombingWP setWaypointCompletionRadius 100;
-      _bombingWP setWaypointStatements
-      ["true", format ["[this, %1, %2, %3, %4, %5, %6] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoBombTarget.sqf';", str _activeWeapon, _targets select _forEachIndex, _bearingToTarget, _planeSpeedVector, _flightHeight, _flightSpeed]];
-    } forEach _bombingPos;
-
     // Add the despawn waypoint
     private _despawnWP = _planeGroup addWaypoint [_despawnPos, 5];
     _despawnWP setWaypointCompletionRadius 10;
     _despawnWP setWaypointStatements
     ["true", "[this] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoDespawn.sqf';"];
 
-/*
     // Carry out the fire mission
     _planeSide = side _plane;
     [_plane, _targets, _planeSide, _activeWeapon, _planeSpeedVector, _flightHeight, _flightSpeed, _despawnBearing, _despawnPos] spawn
@@ -159,5 +146,4 @@ for "_i" from 0 to _planeNumber-1 do
       ["true", "[this] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoDespawn.sqf';"];
 
     };
-    */
 } forEach _planePositions;

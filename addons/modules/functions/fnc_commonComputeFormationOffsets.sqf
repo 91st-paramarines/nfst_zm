@@ -1,6 +1,6 @@
 params["_formation", "_planeNumber", "_bearing"];
 
-private _formationSpacing = 100;
+private _formationSpacing = 150;
 
 if (_planeNumber <= 0) then {throw "Number of planes in formation must be at least one."};
 

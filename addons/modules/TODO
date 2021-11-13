@@ -12,15 +12,17 @@ Sync GUI anchors
       v
 
 AirStrike
+^ Figure out how to hit a target WITH NAPALM
+^ Fix pilots going berserk after dropping bombs
+    bombing waypoints appear to be not lined up : this might trigger the cascading erratic behaviour 
+^ Check locality
 ^ Add tooltips
 ^ Localize
 ^ Automatically add created entities to curator
-^ Ensure that despawn waypoints are spawned further away than the last bomb drop waypoint
-^ Figure out how to hit a target
+- Raise minimum distance for spawn and despawn
 - Add better class finding with category=="air"
 - It appears drones don't do too well with the module, which isn't surprising as they don't have crew
-v Check correctness of calculations for the _bombingEndWP position variable, it looks like my trig is off
-v Implement a switch case in fnc_moduleAirStrikePostInit to calculate different waypoints based on selected formation
+v Implement a fancy strike pattern based on formation
 v Make _formationDistance an argument of nfst_fnc_commonComputeFormationOffsets
 
 Others

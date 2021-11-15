@@ -18,6 +18,7 @@ private _despawnDistance = sliderPosition _idcDespawnDistance;
 closeDialog 0;
 
 // Prepare some flight parameters
+private _cooldown = 0.3;
 private _bearingToTarget  = (_spawnBearing + 180) % 360;
 private _planeSpeedVector = [[_flightSpeed / 3.6, 0, 0], 90 - _spawnBearing, 2] call BIS_fnc_rotateVector3D;
 private _flightHeight     = _dropHeight + getTerrainHeightASL _targetPos;
@@ -110,6 +111,16 @@ for "_i" from 0 to _planeNumber-1 do
       };
     } forEach _planeWeapons;
 
+    // Set bombing run waypoint
+
+    private _bombingWP = _planeGroup addWaypoint [_bombingPos select 0, -1];
+    _bombingWP setWaypointCompletionRadius 10;
+    _bombingWP setWaypointBehaviour "CARELESS";
+    _bombingWP setWaypointStatements
+    ["true", format ["[this, %1, %2, %3] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoBombingRun.sqf';", str _activeWeapon, _targets, _fireMode, _cooldown]];
+
+
+/*
     // Set bomb drop waypoints
     {
       private _bombingWP = _planeGroup addWaypoint [_x, -1];
@@ -118,7 +129,7 @@ for "_i" from 0 to _planeNumber-1 do
       _bombingWP setWaypointStatements
       ["true", format ["[this, %1, %2, %3, %4, %5, %6] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoBombTarget.sqf';", str _activeWeapon, _targets select _forEachIndex, _bearingToTarget, _planeSpeedVector, _flightHeight, _flightSpeed]];
     } forEach _bombingPos;
-
+*/
     // Add the despawn waypoint
     private _despawnWP = _planeGroup addWaypoint [_despawnPos, -1];
     _despawnWP setWaypointCompletionRadius 10;

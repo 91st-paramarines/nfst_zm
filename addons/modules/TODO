@@ -17,6 +17,7 @@ AirStrike
   > looks like they do minor corrections after the second waypoint
     > are they moving away from the bomb's danger zone?
     > are they correcting course because they were sleeping while dropping the first two bombs?
+      check GUI mechanisms on spread speed relation
 ^ Check locality
 ^ Add tooltips
 ^ Localize

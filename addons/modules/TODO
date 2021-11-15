@@ -1,32 +1,24 @@
 ArtilleryStrike
-^ Need to add isServer condition to OnConfirm?
 ^ Add tooltips
+^ Check locality
+- Add titles to the frames
 - Fix safe zone readout not updating on inferior splash radius update
 v Use more MACROS for string attributes
 v Add CBA settings to control default slider values
 
-      ^
-      |
-Sync GUI anchors
-      |
-      v
-
 AirStrike
-^ Figure out how to hit a target WITH NAPALM
-^ Fix pilots going berserk after dropping two bombs for VN ordnance
-  > looks like they do minor corrections after the second waypoint
-    > are they moving away from the bomb's danger zone?
-    > are they correcting course because they were sleeping while dropping the first two bombs?
-      check GUI mechanisms on spread speed relation
-^ Check locality
 ^ Add tooltips
-^ Localize
+^ Check locality
 ^ Automatically add created entities to curator
+- Fix title background position
+- Figure out how to hit a target WITH NAPALM
+- delete deprecated DoBombTarget.sqf file
 - Raise minimum distance for spawn and despawn
+- Add intermediate wp so that planes stay on bombing bearing until the last bomb is dropped?
 - Add better class finding with category=="air"
-- It appears drones don't do too well with the module, which isn't surprising as they don't have crew
+v It appears drones don't do too well with the module, which isn't surprising as they don't have crew
 v Implement a fancy strike pattern based on formation
-v Make _formationDistance an argument of nfst_fnc_commonComputeFormationOffsets
+v Add CBA settings to control default slider values
 
 Others
 Add an 3den module to place intel

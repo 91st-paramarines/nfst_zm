@@ -1,4 +1,4 @@
-params ["_idcPlaneType", "_idcBombsCombo", "_idcBombsSlider", "_idcBombsReadout", "_idcSpeedSlider", "_idcSpeedReadout"];
+params ["_idcPlaneType", "_idcBombsCombo", "_idcBombsSlider", "_idcBombsReadout", "_idcSpeedSlider", "_idcSpeedReadout", "_idcSpreadSlider", "_idcSpreadReadout", "_cooldown"];
 
 private _planeType = lbData [_idcPlaneType, lbCurSel _idcPlaneType];
 private _compatibleBombs = missionNamespace getVariable "nfst_moduleAirStrikeBomberPlanes";
@@ -15,10 +15,18 @@ ctrlSetText [_idcBombsReadout, "0"];
   {
     _stallSpeed = _x select 4;
     _maxSpeed   = _x select 5;
-    ctrlShow [_idcSpeedSlider, true];
-    sliderSetPosition [_idcSpeedSlider, round( (_stallSpeed + _maxSpeed) / 2 )];
+
+    _defaultSpeed = round ((_stallSpeed + _maxSpeed) / 4);
+
     sliderSetRange [_idcSpeedSlider, _stallSpeed, _maxSpeed];
-    ctrlSetText [_idcSpeedReadout, str(round( (_stallSpeed + _maxSpeed) / 2 ))];
+    sliderSetPosition [_idcSpeedSlider, _defaultSpeed];
+    ctrlSetText [_idcSpeedReadout, str _defaultSpeed];
+
+    _minSpread = round (_defaultSpeed * _cooldown / 3.6);
+    _maxSpread = round (_maxSpeed  * _cooldown / 3.6);
+    sliderSetRange [_idcSpreadSlider, _minSpread, _maxSpread];
+    sliderSetPosition [_idcSpreadSlider, _minSpread];
+    ctrlSetText [_idcSpreadReadout, str _minSpread];
 
     _bombsInfo  = _x select 2;
     {

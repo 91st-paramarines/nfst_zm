@@ -9,7 +9,6 @@ private _planeGunner = gunner _plane;
 
 {
   _target = createvehicle [_targetType, _x, [], 0, "none"];
-  _jeep = createvehicle ["C_Van_01_fuel_F", _x, [], 0, "none"];
   _plane reveal lasertarget _target;
   _plane dowatch lasertarget _target;
   _plane dotarget lasertarget _target;
@@ -26,12 +25,3 @@ private _planeGunner = gunner _plane;
   deleteVehicle _target;
   sleep(_cooldown);
 } forEach _targets;
-
-/*
-for "_i" from 1 to (_bombNumber) do
-{
-  (gunner _plane) forceWeaponFire [_activeWeapon, _fireMode];
-  (driver _plane) forceWeaponFire [_activeWeapon, _fireMode];
-  uiSleep(_bombDelay);
-};
-*/

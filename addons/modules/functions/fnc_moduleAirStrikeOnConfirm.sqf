@@ -1,6 +1,6 @@
 private _targetPos = uiNamespace getVariable "nfst_moduleAirStrikePos";
 
-params ["_idcPlaneType", "_idcPlaneNumber", "_idcFormation", "_idcBombType", "_idcBombNumber", "_idcBombDelay", "_idcDropHeight", "_idcFlightSpeed", "_idcSpawnBearing", "_idcSpawnDistance", "_idcDespawnBearing", "_idcDespawnDistance"];
+params ["_idcPlaneType", "_idcPlaneNumber", "_idcFormation", "_idcBombType", "_idcBombNumber", "_idcBombDelay", "_idcDropHeight", "_idcFlightSpeed", "_idcSpawnBearing", "_idcSpawnDistance", "_idcDespawnBearing", "_idcDespawnDistance", "_cooldown"];
 
 private _planeType       = lbData [_idcPlaneType, lbCurSel _idcPlaneType];
 private _formation       = lbData [_idcFormation, lbCursel _idcFormation];
@@ -18,7 +18,6 @@ private _despawnDistance = sliderPosition _idcDespawnDistance;
 closeDialog 0;
 
 // Prepare some flight parameters
-private _cooldown = 0.3;
 private _bearingToTarget  = (_spawnBearing + 180) % 360;
 private _planeSpeedVector = [[_flightSpeed / 3.6, 0, 0], 90 - _spawnBearing, 2] call BIS_fnc_rotateVector3D;
 private _flightHeight     = _dropHeight + getTerrainHeightASL _targetPos;
@@ -117,7 +116,7 @@ for "_i" from 0 to _planeNumber-1 do
     _bombingWP setWaypointCompletionRadius 10;
     _bombingWP setWaypointBehaviour "CARELESS";
     _bombingWP setWaypointStatements
-    ["true", format ["[this, %1, %2, %3] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoBombingRun.sqf';", str _activeWeapon, _targets, _fireMode, _cooldown]];
+    ["true", format ["[this, %1, %2, %3, %4] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoBombingRun.sqf';", str _activeWeapon, _targets, _fireMode, _cooldown]];
 
 
 /*

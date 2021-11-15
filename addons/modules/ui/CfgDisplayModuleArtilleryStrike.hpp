@@ -13,7 +13,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class HeaderBackground: RscText
 		{
 			idc  = ARTY_STRIKE_IDC_HEADER_BACKGROUND;
-			text = "ARTILLERY STRIKE"; //--- ToDo: Localize;
+			text = CSTRING(ArtilleryStrike_GUI_Title);
 
 			x = 0.29375  * safezoneW + safezoneX;
 			y = 0.211917 * safezoneH + safezoneY;
@@ -36,7 +36,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class CancelButton: RscButtonMenu
 		{
 			//idc = 2;
-			text   = "Cancel"; //--- ToDo: Localize;
+			text = CSTRING(Common_Cancel);
 			action = "closeDialog 0";
 
 			x = 0.29375   * safezoneW + safezoneX;
@@ -47,7 +47,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class OkButton: RscButtonMenu
 		{
 			//idc = 1;
-			text   = "Ok"; //--- ToDo: Localize;
+			text = CSTRING(Common_Confirm);
 			action = QUOTE( ARTY_STRIKE_IDC_INPUTS spawn FUNC(moduleArtilleryStrikeOnConfirm) );
 
 			x = 0.654687  * safezoneW + safezoneX;
@@ -67,7 +67,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class SplashRadiusHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_SPLASH_RADIUS_HEADER;
-			text    = "Splash radius"; //--- ToDo: Localize;
+			text = CSTRING(ArtilleryStrike_GUI_Dispersion);
 			//tooltip = CSTRING();
 
 			x = 0.304062 * safezoneW + safezoneX;
@@ -123,7 +123,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class SafeZoneHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_SAFE_ZONE_HEADER;
-			text    = "Safe zone radius"; //--- ToDo: Localize;
+			text = CSTRING(ArtilleryStrike_GUI_Safezone);
 			//tooltip = CSTRING();
 
 			x = 0.304062 * safezoneW + safezoneX;
@@ -161,7 +161,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class OrdnanceTypeHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_ORDNANCE_TYPE_HEADER;
-			text    = "Ordnance type"; //--- ToDo: Localize;
+			text = CSTRING(ArtilleryStrike_GUI_ShellType);
 			//tooltip = CSTRING();
 
 			x = 0.304688 * safezoneW + safezoneX;
@@ -212,7 +212,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class NumberOfRoundsHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_NUMBER_OF_ROUNDS_HEADER;
-			text    = "Number of rounds"; //--- ToDo: Localize;
+			text = CSTRING(ArtilleryStrike_GUI_NumberOfRounds);
 			//tooltip = CSTRING();
 
 			x = 0.304062 * safezoneW + safezoneX;
@@ -249,7 +249,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class SalvoLengthHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_SALVO_LENGTH_HEADER;
-			text    = "Salvo length"; //--- ToDo: Localize;
+			text = CSTRING(ArtilleryStrike_GUI_SalvoLength);
 			//tooltip = CSTRING();
 
 			x = 0.304062 * safezoneW + safezoneX;
@@ -296,7 +296,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class NumberOfSalvosHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_NUMBER_OF_SALVOS_HEADER;
-			text    = "Number of salvos"; //--- ToDo: Localize;
+			text = CSTRING(ArtilleryStrike_GUI_NumberOfSalvos);
 			//tooltip = CSTRING();
 
 			x = 0.304062 * safezoneW + safezoneX;
@@ -334,7 +334,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class CooldownTimeHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_COOLDOWN_TIME_HEADER;
-			text    = "Cooldown time"; //--- ToDo: Localize;
+			text = CSTRING(ArtilleryStrike_GUI_Cooldown);
 			//tooltip = CSTRING();
 
 			x = 0.304688 * safezoneW + safezoneX;

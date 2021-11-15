@@ -12,19 +12,19 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 
 		class HeaderBackground: RscText
 		{
-			idc = AIR_STRIKE_IDC_HEADER_BACKGROUND ;
-			text = "AIR STRIKE"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_HEADER_BACKGROUND;
+			text = CSTRING(AirStrike_GUI_Title);
 
-			x = 0.29375 * safezoneW + safezoneX;
-			y = 0.203   * safezoneH + safezoneY;
-			w = 0.4125  * safezoneW;
-			h = 0.033   * safezoneH;
+			x = 0.29375  * safezoneW + safezoneX;
+			y = 0.211917 * safezoneH + safezoneY;
+			w = 0.4125   * safezoneW;
+			h = 0.033    * safezoneH;
 
 			colorBackground[] = COLOR_HALF_TRANSPARENT_91ST_BLUE;
 		};
 		class BodyBackground: RscText
 		{
-			idc = AIR_STRIKE_IDC_BODY_BACKGROUND ;
+			idc = AIR_STRIKE_IDC_BODY_BACKGROUND;
 
 			x = 0.29375 * safezoneW + safezoneX;
 			y = 0.247   * safezoneH + safezoneY;
@@ -35,8 +35,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class CancelButton: RscButtonMenu
 		{
-			idc = AIR_STRIKE_IDC_CANCEL_BUTTON ;
-			text = "Cancel"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_CANCEL_BUTTON;
+			text = CSTRING(Common_Cancel);
 			action = "closeDialog 0";
 
 			x = 0.29375   * safezoneW + safezoneX;
@@ -46,8 +46,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class OkButton: RscButtonMenu
 		{
-			idc = AIR_STRIKE_IDC_OK_BUTTON ;
-			text = "OK"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_OK_BUTTON;
+			text = CSTRING(Common_Confirm);
 			action = QUOTE( AIR_STRIKE_IDC_INPUTS spawn FUNC(moduleAirStrikeOnConfirm) );
 
 			x = 0.654688  * safezoneW + safezoneX;
@@ -57,8 +57,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class PlaneInfoFrame: RscFrame
 		{
-			idc = AIR_STRIKE_IDC_PLANE_INFO_FRAME ;
-			text = "Plane"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_PLANE_INFO_FRAME;
+			text = CSTRING(AirStrike_GUI_Plane);
 
 			x = 0.298906 * safezoneW + safezoneX;
 			y = 0.2536   * safezoneH + safezoneY;
@@ -67,8 +67,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class PlaneTypeHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_PLANE_TYPE_HEADER ;
-			text = "Type"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_PLANE_TYPE_HEADER;
+			text = CSTRING(AirStrike_GUI_PlaneType);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.269     * safezoneH + safezoneY;
@@ -79,7 +79,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class PlaneTypeCombo: RscCombo
 		{
-			idc = AIR_STRIKE_IDC_PLANE_TYPE_COMBO ;
+			idc = AIR_STRIKE_IDC_PLANE_TYPE_COMBO;
 
 			x = 0.355625 * safezoneW + safezoneX;
 			y = 0.269    * safezoneH + safezoneY;
@@ -91,8 +91,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class NumberOfPlanesHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_NUMBER_OF_PLANES_HEADER ;
-			text = "Number"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_NUMBER_OF_PLANES_HEADER;
+			text = CSTRING(AirStrike_GUI_NumberOfPlanes);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.313     * safezoneH + safezoneY;
@@ -103,7 +103,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class NumberOfPlanesSlider: RscXSliderH
 		{
-			idc = AIR_STRIKE_IDC_NUMBER_OF_PLANES_SLIDER ;
+			idc = AIR_STRIKE_IDC_NUMBER_OF_PLANES_SLIDER;
 
 			x = 0.355615 * safezoneW + safezoneX;
 			y = 0.313    * safezoneH + safezoneY;
@@ -118,7 +118,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class NumberOfPlanesReadout: RscText
 		{
-			idc = AIR_STRIKE_IDC_NUMBER_OF_PLANES_READOUT ;
+			idc  = AIR_STRIKE_IDC_NUMBER_OF_PLANES_READOUT;
+			text = AIR_STRIKE_NUMBER_OF_PLANES_DEFAULT;
 
 			x = 0.469062 * safezoneW + safezoneX;
 			y = 0.313    * safezoneH + safezoneY;
@@ -127,8 +128,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class FormationHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_FORMATION_HEADER ;
-			text = "Formation"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_FORMATION_HEADER;
+			text = CSTRING(AirStrike_GUI_Formation);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.357     * safezoneH + safezoneY;
@@ -139,7 +140,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class FormationCombo: RscCombo
 		{
-			idc = AIR_STRIKE_IDC_FORMATION_COMBO ;
+			idc = AIR_STRIKE_IDC_FORMATION_COMBO;
 
 			x = 0.355625 * safezoneW + safezoneX;
 			y = 0.357    * safezoneH + safezoneY;
@@ -168,8 +169,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class BombInfoFrame: RscFrame
 		{
-			idc = AIR_STRIKE_IDC_BOMB_INFO_FRAME ;
-			text = "Bomb"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_BOMB_INFO_FRAME;
+			text = CSTRING(AirStrike_GUI_Bomb);
 
 			x = 0.505156 * safezoneW + safezoneX;
 			y = 0.2536   * safezoneH + safezoneY;
@@ -178,8 +179,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class BombTypeHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_BOMB_TYPE_HEADER ;
-			text = "Type"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_BOMB_TYPE_HEADER;
+			text = CSTRING(AirStrike_GUI_BombType);
 
 			x = 0.510312  * safezoneW + safezoneX;
 			y = 0.269     * safezoneH + safezoneY;
@@ -190,7 +191,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class BombTypeCombo: RscCombo
 		{
-			idc = AIR_STRIKE_IDC_BOMB_TYPE_COMBO ;
+			idc = AIR_STRIKE_IDC_BOMB_TYPE_COMBO;
 
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.269    * safezoneH + safezoneY;
@@ -201,8 +202,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class NumberOfBombsHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_NUMBER_OF_BOMBS_HEADER ;
-			text = "Number"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_NUMBER_OF_BOMBS_HEADER;
+			text = CSTRING(AirStrike_GUI_NumberOfBombs);
 
 			x = 0.510312  * safezoneW + safezoneX;
 			y = 0.313     * safezoneH + safezoneY;
@@ -213,7 +214,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class NumberOfBombsSlider: RscXSliderH
 		{
-			idc = AIR_STRIKE_IDC_NUMBER_OF_BOMBS_SLIDER ;
+			idc = AIR_STRIKE_IDC_NUMBER_OF_BOMBS_SLIDER;
 
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.313    * safezoneH + safezoneY;
@@ -228,7 +229,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class NumberOfBombsReadout: RscText
 		{
-			idc = AIR_STRIKE_IDC_NUMBER_OF_BOMBS_READOUT ;
+			idc  = AIR_STRIKE_IDC_NUMBER_OF_BOMBS_READOUT;
+			text = AIR_STRIKE_NUMBER_OF_BOMBS_DEFAULT;
 
 			x = 0.675312 * safezoneW + safezoneX;
 			y = 0.313    * safezoneH + safezoneY;
@@ -237,8 +239,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class BombsSpreadHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_BOMBS_SPREAD_HEADER ;
-			text = "Spread"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_BOMBS_SPREAD_HEADER;
+			text = CSTRING(AirStrike_GUI_Dispersion);
 
 			x = 0.510312  * safezoneW + safezoneX;
 			y = 0.357     * safezoneH + safezoneY;
@@ -249,7 +251,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class BombsSpreadSlider: RscXSliderH
 		{
-			idc = AIR_STRIKE_IDC_BOMBS_SPREAD_SLIDER ;
+			idc = AIR_STRIKE_IDC_BOMBS_SPREAD_SLIDER;
 
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.357    * safezoneH + safezoneY;
@@ -274,8 +276,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class FlightInfoFrame: RscFrame
 		{
-			idc = AIR_STRIKE_IDC_FLIGHT_INFO_FRAME ;
-			text = "Flight"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_FLIGHT_INFO_FRAME;
+			text = CSTRING(AirStrike_GUI_FlightInfo);
 
 			x = 0.298906 * safezoneW + safezoneX;
 			y = 0.4076   * safezoneH + safezoneY;
@@ -284,8 +286,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class FlightSpeedHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_FLIGHT_SPEED_HEADER ;
-			text = "Speed"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_FLIGHT_SPEED_HEADER;
+			text = CSTRING(AirStrike_GUI_Speed);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.423     * safezoneH + safezoneY;
@@ -296,7 +298,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class FlightSpeedSlider: RscXSliderH
 		{
-			idc = AIR_STRIKE_IDC_FLIGHT_SPEED_SLIDER ;
+			idc = AIR_STRIKE_IDC_FLIGHT_SPEED_SLIDER;
 
 			x = 0.355625 * safezoneW + safezoneX;
 			y = 0.423    * safezoneH + safezoneY;
@@ -307,11 +309,12 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 			sliderStep     = AIR_STRIKE_FLIGHT_SPEED_STEP;
 			sliderPosition = AIR_STRIKE_FLIGHT_SPEED_DEFAULT;
 
-			onSliderPosChanged = QUOTE( ctrlSetText [AIR_STRIKE_IDC_FLIGHT_SPEED_READOUT, str (_this select 1)] );
+			onSliderPosChanged = QUOTE( AIR_STRIKE_IDC_SPEED_CHANGED spawn FUNC(moduleAirStrikeSetSpread) ); // CHange func name
+			//onSliderPosChanged = QUOTE( ctrlSetText [AIR_STRIKE_IDC_FLIGHT_SPEED_READOUT, str (_this select 1)] );
 		};
 		class FlightSpeedReadout: RscText
 		{
-			idc = AIR_STRIKE_IDC_FLIGHT_SPEED_READOUT ;
+			idc = AIR_STRIKE_IDC_FLIGHT_SPEED_READOUT;
 
 			x = 0.644375  * safezoneW + safezoneX;
 			y = 0.423     * safezoneH + safezoneY;
@@ -320,8 +323,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class FlightAltitudeHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_FLIGHT_ALTITUDE_HEADER ;
-			text = "Altitude"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_FLIGHT_ALTITUDE_HEADER;
+			text = CSTRING(AirStrike_GUI_Altitude);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.467     * safezoneH + safezoneY;
@@ -332,7 +335,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class FlightAltitudeSlider: RscXSliderH
 		{
-			idc = AIR_STRIKE_IDC_FLIGHT_ALTITUDE_SLIDER ;
+			idc = AIR_STRIKE_IDC_FLIGHT_ALTITUDE_SLIDER;
 
 			x = 0.355625 * safezoneW + safezoneX;
 			y = 0.467    * safezoneH + safezoneY;
@@ -357,8 +360,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class SpawnInfoFrame: RscFrame
 		{
-			idc = AIR_STRIKE_IDC_SPAWN_INFO_FRAME ;
-			text = "Spawn"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_SPAWN_INFO_FRAME;
+			text = CSTRING(AirStrike_GUI_SpawnInfo);
 
 			x = 0.298906 * safezoneW + safezoneX;
 			y = 0.5176   * safezoneH + safezoneY;
@@ -367,8 +370,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class SpawnBearingHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_SPAWN_BEARING_HEADER ;
-			text = "Bearing"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_SPAWN_BEARING_HEADER;
+			text = CSTRING(AirStrike_GUI_SpawnBearing);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.533     * safezoneH + safezoneY;
@@ -379,7 +382,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class SpawnBearingSlider: RscXSliderH
 		{
-			idc = AIR_STRIKE_IDC_SPAWN_BEARING_SLIDER ;
+			idc = AIR_STRIKE_IDC_SPAWN_BEARING_SLIDER;
 
 			x = 0.355625 * safezoneW + safezoneX;
 			y = 0.533    * safezoneH + safezoneY;
@@ -404,8 +407,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class SpawnDistanceHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_SPAWN_DISTANCE_HEADER ;
-			text = "Distance"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_SPAWN_DISTANCE_HEADER;
+			text = CSTRING(AirStrike_GUI_SpawnDistance);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.577     * safezoneH + safezoneY;
@@ -416,7 +419,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class SpawnDistanceSlider: RscXSliderH
 		{
-			idc = AIR_STRIKE_IDC_SPAWN_DISTANCE_SLIDER ;
+			idc = AIR_STRIKE_IDC_SPAWN_DISTANCE_SLIDER;
 
 			x = 0.355625 * safezoneW + safezoneX;
 			y = 0.577    * safezoneH + safezoneY;
@@ -441,8 +444,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class DespawnInfoFrame: RscFrame
 		{
-			idc = AIR_STRIKE_IDC_DESPAWN_INFO_FRAME ;
-			text = "Despawn"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_DESPAWN_INFO_FRAME;
+			text = CSTRING(AirStrike_GUI_DespawnInfo);
 
 			x = 0.298906 * safezoneW + safezoneX;
 			y = 0.6276   * safezoneH + safezoneY;
@@ -451,8 +454,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class DespawnBearingHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_DESPAWN_BEARING_HEADER ;
-			text = "Bearing"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_DESPAWN_BEARING_HEADER;
+			text = CSTRING(AirStrike_GUI_DespawnBearing);
 
 			x = 0.304297  * safezoneW + safezoneX;
 			y = 0.643056  * safezoneH + safezoneY;
@@ -463,7 +466,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class DespawnBearingSlider: RscXSliderH
 		{
-			idc = AIR_STRIKE_IDC_DESPAWN_BEARING_SLIDER ;
+			idc = AIR_STRIKE_IDC_DESPAWN_BEARING_SLIDER;
 
 			x = 0.355625 * safezoneW + safezoneX;
 			y = 0.643    * safezoneH + safezoneY;
@@ -488,8 +491,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class DespawnDistanceHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_DESPAWN_DISTANCE_HEADER ;
-			text = "Distance"; //--- ToDo: Localize;
+			idc = AIR_STRIKE_IDC_DESPAWN_DISTANCE_HEADER;
+			text = CSTRING(AirStrike_GUI_DespawnDistance);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.687     * safezoneH + safezoneY;
@@ -500,7 +503,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class DespawnDistanceSlider: RscXSliderH
 		{
-			idc = AIR_STRIKE_IDC_DESPAWN_DISTANCE_SLIDER ;
+			idc = AIR_STRIKE_IDC_DESPAWN_DISTANCE_SLIDER;
 
 			x = 0.355625 * safezoneW + safezoneX;
 			y = 0.687    * safezoneH + safezoneY;

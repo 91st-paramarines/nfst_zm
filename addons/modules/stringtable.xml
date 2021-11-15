@@ -6,6 +6,15 @@
       <French>91st Paramarines - Module Utilitaire</French>
     </Key>
 
+    <Key ID="STR_NFST_Modules_Common_Cancel">
+      <English>Cancel</English>
+      <French>Annuler</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_Common_Confirm">
+      <English>Confirm</English>
+      <French>Confirmer</French>
+    </Key>
+
     <Key ID="STR_NFST_Modules_ArtilleryStrike_DisplayName">
       <English>Artillery Strike</English>
       <French>Frappe d'artillerie</French>
@@ -13,6 +22,38 @@
     <Key ID="STR_NFST_Modules_ArtilleryStrike_Description">
       <English>Place on desired splash location.</English>
       <French>Placer sur la zone d'impact voulue.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_Title">
+      <English>ARTILLERY STRIKE</English>
+      <French>FRAPPE D'ARTILLERIE</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_Dispersion">
+      <English>Dispersion</English>
+      <French>Dispersion</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_Safezone">
+      <English>Safe zone</English>
+      <French>Zone de sécurité</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_ShellType">
+      <English>Shell type</English>
+      <French>Type d'obus</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_NumberOfRounds">
+      <English>Quantity</English>
+      <French>Quantité</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_SalvoLength">
+      <English>Salvo length</English>
+      <French>Durée de salve</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_NumberOfSalvos">
+      <English>Quantity</English>
+      <French>Quantité</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_Cooldown">
+      <English>Cooldown</English>
+      <French>Intervalle</French>
     </Key>
 
     <Key ID="STR_NFST_Modules_AirStrike_DisplayName">
@@ -22,6 +63,78 @@
     <Key ID="STR_NFST_Modules_AirStrike_Description">
       <English>Place on desired splash location.</English>
       <French>Placer sur la zone d'impact voulue.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_Title">
+      <English>AIR STRIKE</English>
+      <French>FRAPPE AÉRIENNE</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_Plane">
+      <English>Plane</English>
+      <French>Avion</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_PlaneType">
+      <English>Type</English>
+      <French>Type</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_NumberOfPlanes">
+      <English>Number</English>
+      <French>Nombre</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_Formation">
+      <English>Formation</English>
+      <French>Formation</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_Bomb">
+      <English>Bomb</English>
+      <French>Bombe</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_BombType">
+      <English>Type</English>
+      <French>Type</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_NumberOfBombs">
+      <English>Number</English>
+      <French>Nombre</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_Dispersion">
+      <English>Dispersion</English>
+      <French>Dispersion</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_FlightInfo">
+      <English>Flight info</English>
+      <French>Paramètres de vol</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_Speed">
+      <English>Speed</English>
+      <French>Vitesse</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_Altitude">
+      <English>Altitude</English>
+      <French>Altitude</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_SpawnInfo">
+      <English>Spawn info</English>
+      <French>Point d'apparition</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_SpawnBearing">
+      <English>Bearing</English>
+      <French>Azimuth</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_SpawnDistance">
+      <English>Distance</English>
+      <French>Distance</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_DespawnInfo">
+      <English>Despawn info</English>
+      <French>Point de disparition</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_DespawnBearing">
+      <English>Bearing</English>
+      <French>Azimuth</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_DespawnDistance">
+      <English>Distance</English>
+      <French>Distance</French>
     </Key>
   </Package>
 </Project>

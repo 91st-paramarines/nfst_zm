@@ -13,8 +13,10 @@ Sync GUI anchors
 
 AirStrike
 ^ Figure out how to hit a target WITH NAPALM
-^ Fix pilots going berserk after dropping bombs
-    bombing waypoints appear to be not lined up : this might trigger the cascading erratic behaviour 
+^ Fix pilots going berserk after dropping two bombs for VN ordnance
+  > looks like they do minor corrections after the second waypoint
+    > are they moving away from the bomb's danger zone?
+    > are they correcting course because they were sleeping while dropping the first two bombs?
 ^ Check locality
 ^ Add tooltips
 ^ Localize

@@ -40,8 +40,10 @@ for "_i" from 0 to _planeNumber-1 do
     private _distanceCorrection = _j * _bombDelay;
     private _bearingCorrection  = [[_distanceCorrection, 0, 0], 90 - _spawnBearing, 2] call BIS_fnc_rotateVector3D;
     private _movementCorrected  = _formationCorrected vectorAdd _bearingCorrection;
-    private _glideBearingCorrection = [[-500 + _j * _bombDelay, 0, 0], 90 - _spawnBearing, 2] call BIS_fnc_rotateVector3D;
+    private _glideBearingCorrection = [[-500, 0, 0], 90 - _spawnBearing, 2] call BIS_fnc_rotateVector3D;
     private _glideCorrected     = _movementCorrected vectorAdd _glideBearingCorrection;
+
+    _glideCorrected set [2, _flightHeight];
 
     _bombingPos append [_glideCorrected];
     _targets append [_movementCorrected];
@@ -110,54 +112,17 @@ for "_i" from 0 to _planeNumber-1 do
 
     // Set bomb drop waypoints
     {
-      private _bombingWP = _planeGroup addWaypoint [_x, 5];
-      _bombingWP setWaypointCompletionRadius 100;
+      private _bombingWP = _planeGroup addWaypoint [_x, -1];
+      _bombingWP setWaypointCompletionRadius 10;
+      _bombingWP setWaypointBehaviour "CARELESS";
       _bombingWP setWaypointStatements
       ["true", format ["[this, %1, %2, %3, %4, %5, %6] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoBombTarget.sqf';", str _activeWeapon, _targets select _forEachIndex, _bearingToTarget, _planeSpeedVector, _flightHeight, _flightSpeed]];
     } forEach _bombingPos;
 
     // Add the despawn waypoint
-    private _despawnWP = _planeGroup addWaypoint [_despawnPos, 5];
+    private _despawnWP = _planeGroup addWaypoint [_despawnPos, -1];
     _despawnWP setWaypointCompletionRadius 10;
     _despawnWP setWaypointStatements
     ["true", "[this] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoDespawn.sqf';"];
 
-/*
-    // Carry out the fire mission
-    _planeSide = side _plane;
-    [_plane, _targets, _planeSide, _activeWeapon, _planeSpeedVector, _flightHeight, _flightSpeed, _despawnBearing, _despawnPos] spawn
-    {
-      params ["_plane","_targets", "_planeSide", "_activeWeapon", "_planeSpeedVector", "_flightHeight", "_flightSpeed", "_despawnBearing", "_despawnPos"];
-      {
-        waituntil {(getposasl _plane) distance _x < 1000};
-
-        private _targetType = if (_planeSide getfriend west > 0.6) then {"LaserTargetW"} else {"LaserTargetE"};
-        _target = createvehicle [_targetType,_x, [],0,"none"];
-        _plane reveal lasertarget _target;
-        _plane dowatch lasertarget _target;
-        _plane dotarget lasertarget _target;
-
-        _planeDriver = driver _plane;
-        _planeDriver fireattarget [_target, _activeWeapon];
-      } forEach _targets;
-
-      {
-        _plane deleteVehicleCrew _x;
-        systemChat "Del";
-      } forEach crew _plane;
-      _plane setDir _despawnBearing;
-      _plane setVelocity _planeSpeedVector;
-      _plane flyInHeightASL [_flightHeight, _flightHeight, _flightHeight];
-      _plane limitSpeed _flightSpeed;
-      private _planeGroup = createVehicleCrew _plane;
-      driver _plane disableAI "FSM";
-
-      // Add the despawn waypoint
-      private _despawnWP = _planeGroup addWaypoint [_despawnPos, 5];
-      _despawnWP setWaypointCompletionRadius 10;
-      _despawnWP setWaypointStatements
-      ["true", "[this] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoDespawn.sqf';"];
-
-    };
-    */
 } forEach _planePositions;

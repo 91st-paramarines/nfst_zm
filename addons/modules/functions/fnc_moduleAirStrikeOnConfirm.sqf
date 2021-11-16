@@ -111,28 +111,30 @@ for "_i" from 0 to _planeNumber-1 do
     } forEach _planeWeapons;
 
     // Set bombing run waypoint
-
     private _bombingWP = _planeGroup addWaypoint [_bombingPos select 0, -1];
     _bombingWP setWaypointCompletionRadius 10;
     _bombingWP setWaypointBehaviour "CARELESS";
     _bombingWP setWaypointStatements
     ["true", format ["[this, %1, %2, %3, %4] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoBombingRun.sqf';", str _activeWeapon, _targets, _fireMode, _cooldown]];
 
-
-/*
-    // Set bomb drop waypoints
-    {
-      private _bombingWP = _planeGroup addWaypoint [_x, -1];
-      _bombingWP setWaypointCompletionRadius 10;
-      _bombingWP setWaypointBehaviour "CARELESS";
-      _bombingWP setWaypointStatements
-      ["true", format ["[this, %1, %2, %3, %4, %5, %6] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoBombTarget.sqf';", str _activeWeapon, _targets select _forEachIndex, _bearingToTarget, _planeSpeedVector, _flightHeight, _flightSpeed]];
-    } forEach _bombingPos;
-*/
     // Add the despawn waypoint
     private _despawnWP = _planeGroup addWaypoint [_despawnPos, -1];
     _despawnWP setWaypointCompletionRadius 10;
     _despawnWP setWaypointStatements
     ["true", "[this] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoDespawn.sqf';"];
 
+// Add objects to curators
+/*
+    if isServer then
+    {
+      {
+        (getAssignedCuratorUnit _x) addCuratorEditableObjects
+        [
+          [_plane],
+          true
+        ];
+        systemChat "Added";
+      } forEach allCurators;
+    };
+*/
 } forEach _planePositions;

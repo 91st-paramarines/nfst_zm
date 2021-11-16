@@ -1,5 +1,6 @@
 PREP(moduleArtilleryStrikeOnPlace);
 PREP(moduleArtilleryStrikeOnConfirm);
+PREP(moduleArtilleryStrikeDisplaySplashChanged);
 
 PREP(moduleAirStrikeGetBombsAndPlanes);
 PREP(moduleAirStrikeSetBomberPlanes);

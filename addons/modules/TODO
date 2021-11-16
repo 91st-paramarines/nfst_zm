@@ -1,28 +1,27 @@
+// DISCLAIMER
+Even in the context of Vietnam and the SOG DLC, the abbreviation WP refers to waypoint, and NOT white phosphorous
+
 ArtilleryStrike
-^ Add tooltips
-^ Check locality
-- Add titles to the frames
-- Fix safe zone readout not updating on inferior splash radius update
+^ Fix safe zone readout not updating on inferior splash radius update
 v Use more MACROS for string attributes
 v Add CBA settings to control default slider values
 
 AirStrike
-^ Add tooltips
-^ Check locality
-^ Automatically add created entities to curator
-- Fix title background position
 - Figure out how to hit a target WITH NAPALM
-- delete deprecated DoBombTarget.sqf file
 - Raise minimum distance for spawn and despawn
 - Add intermediate wp so that planes stay on bombing bearing until the last bomb is dropped?
+- Check that ATL/ASL BS for the spawn and WP
 - Add better class finding with category=="air"
+v Automatically add created entities to curator
 v It appears drones don't do too well with the module, which isn't surprising as they don't have crew
 v Implement a fancy strike pattern based on formation
 v Add CBA settings to control default slider values
 
 Others
-Add an 3den module to place intel
-Make new mod to add ACRE radios
+3den module to place intel
+3den and Zeus module to add ACRE radios
+3den and Zeus module to add spiked ammo (group and individual)
+Grenade selection wheel
 
 All
 Optimize

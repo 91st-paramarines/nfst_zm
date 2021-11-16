@@ -57,18 +57,20 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		};
 		class SplashInfoFrame: RscFrame
 		{
-			idc = ARTY_STRIKE_IDC_SPLASH_INFO_FRAME;
+			idc  = ARTY_STRIKE_IDC_SPLASH_INFO_FRAME;
+			text = CSTRING(ArtilleryStrike_GUI_SplashFrame);
+
 
 			x = 0.298906 * safezoneW + safezoneX;
-			y = 0.258    * safezoneH + safezoneY;
+			y = 0.2536   * safezoneH + safezoneY;
 			w = 0.402187 * safezoneW;
 			h = 0.132    * safezoneH;
 		};
 		class SplashRadiusHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_SPLASH_RADIUS_HEADER;
-			text = CSTRING(ArtilleryStrike_GUI_Dispersion);
-			//tooltip = CSTRING();
+			text    = CSTRING(ArtilleryStrike_GUI_Dispersion);
+			tooltip = CSTRING(ArtilleryStrike_GUI_DispersionTooltip);
 
 			x = 0.304062 * safezoneW + safezoneX;
 			y = 0.269    * safezoneH + safezoneY;
@@ -90,25 +92,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 			sliderStep     = 1;
 			sliderPosition = ARTY_STRIKE_DEFAULT_SAFE_ZONE;
 
-			onSliderPosChanged = QUOTE(
-				private _newVal = _this select 1;
-				ctrlSetText [ARTY_STRIKE_IDC_SPLASH_RADIUS_READOUT, str _newVal];
-
-				if ( _newVal <= ARTY_STRIKE_MAX_SAFE_ZONE ) then
-				{
-					sliderSetRange [ARTY_STRIKE_IDC_SAFE_ZONE_SLIDER, ARTY_STRIKE_MIN_SAFE_ZONE, _newVal - 1];
-					if ( _newVal <= (sliderPosition ARTY_STRIKE_IDC_SAFE_ZONE_SLIDER) ) then
-					{
-						sliderSetPosition [ARTY_STRIKE_IDC_SAFE_ZONE_SLIDER, _newVal - 1];
-						// TODO : safe zone readout doesn't update when reduced by this script here
-						ctrlSetText [ARTY_STRIKE_IDC_SAFE_ZONE_READOUT, str (_newVal - 1)];
-					};
-				}
-				else
-				{
-					sliderSetRange [ARTY_STRIKE_IDC_SAFE_ZONE_SLIDER, ARTY_STRIKE_MIN_SAFE_ZONE, ARTY_STRIKE_MAX_SAFE_ZONE];
-				};
-			);
+			onSliderPosChanged = QUOTE( ARTY_STRIKE_IDC_SPLASH_CHANGED spawn FUNC(moduleArtilleryStrikeDisplaySplashChanged) );
 		};
 		class SplashRadiusReadout: RscText
 		{
@@ -123,8 +107,8 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class SafeZoneHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_SAFE_ZONE_HEADER;
-			text = CSTRING(ArtilleryStrike_GUI_Safezone);
-			//tooltip = CSTRING();
+			text    = CSTRING(ArtilleryStrike_GUI_Safezone);
+			tooltip = CSTRING(ArtilleryStrike_GUI_SafezoneTooltip);
 
 			x = 0.304062 * safezoneW + safezoneX;
 			y = 0.313    * safezoneH + safezoneY;
@@ -150,8 +134,8 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		};
 		class SafeZoneReadout: RscText
 		{
-			idc  = ARTY_STRIKE_IDC_SAFE_ZONE_READOUT;
-			text = QUOTE( ARTY_STRIKE_DEFAULT_SAFE_ZONE );
+			idc     = ARTY_STRIKE_IDC_SAFE_ZONE_READOUT;
+			text    = QUOTE( ARTY_STRIKE_DEFAULT_SAFE_ZONE );
 
 			x = 0.665     * safezoneW + safezoneX;
 			y = 0.313     * safezoneH + safezoneY;
@@ -161,8 +145,8 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class OrdnanceTypeHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_ORDNANCE_TYPE_HEADER;
-			text = CSTRING(ArtilleryStrike_GUI_ShellType);
-			//tooltip = CSTRING();
+			text    = CSTRING(ArtilleryStrike_GUI_ShellType);
+			tooltip = CSTRING(ArtilleryStrike_GUI_ShellTypeTooltip);
 
 			x = 0.304688 * safezoneW + safezoneX;
 			y = 0.358333 * safezoneH + safezoneY;
@@ -202,18 +186,19 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		};
 		class SalvoInfoFrame: RscFrame
 		{
-			idc = ARTY_STRIKE_IDC_SALVO_INFO_FRAME;
+			idc  = ARTY_STRIKE_IDC_SALVO_INFO_FRAME;
+			text = CSTRING(ArtilleryStrike_GUI_SalvoFrame);
 
 			x = 0.298906 * safezoneW + safezoneX;
-			y = 0.412    * safezoneH + safezoneY;
+			y = 0.4076   * safezoneH + safezoneY;
 			w = 0.402187 * safezoneW;
 			h = 0.088    * safezoneH;
 		};
 		class NumberOfRoundsHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_NUMBER_OF_ROUNDS_HEADER;
-			text = CSTRING(ArtilleryStrike_GUI_NumberOfRounds);
-			//tooltip = CSTRING();
+			text    = CSTRING(ArtilleryStrike_GUI_NumberOfRounds);
+			tooltip = CSTRING(ArtilleryStrike_GUI_NumberOfRoundsTooltip);
 
 			x = 0.304062 * safezoneW + safezoneX;
 			y = 0.423    * safezoneH + safezoneY;
@@ -241,6 +226,7 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		{
 			idc = ARTY_STRIKE_IDC_NUMBER_OF_ROUNDS_READOUT;
 			text = QUOTE( ARTY_STRIKE_DEFAULT_NUMBER_OF_ROUNDS );
+
 			x = 0.665     * safezoneW + safezoneX;
 			y = 0.423     * safezoneH + safezoneY;
 			w = 0.0309375 * safezoneW;
@@ -249,8 +235,8 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class SalvoLengthHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_SALVO_LENGTH_HEADER;
-			text = CSTRING(ArtilleryStrike_GUI_SalvoLength);
-			//tooltip = CSTRING();
+			text    = CSTRING(ArtilleryStrike_GUI_SalvoLength);
+			tooltip = CSTRING(ArtilleryStrike_GUI_SalvoLengthTooltip);
 
 			x = 0.304062 * safezoneW + safezoneX;
 			y = 0.467    * safezoneH + safezoneY;
@@ -286,18 +272,19 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		};
 		class FireMissionInfoFrame: RscFrame
 		{
-			idc = ARTY_STRIKE_IDC_FIRE_MISSION_INFO_FRAME;
+			idc  = ARTY_STRIKE_IDC_FIRE_MISSION_INFO_FRAME;
+			text = CSTRING(ArtilleryStrike_GUI_MissionFrame);
 
 			x = 0.298906 * safezoneW + safezoneX;
-			y = 0.522    * safezoneH + safezoneY;
+			y = 0.5176   * safezoneH + safezoneY;
 			w = 0.402187 * safezoneW;
 			h = 0.088    * safezoneH;
 		};
 		class NumberOfSalvosHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_NUMBER_OF_SALVOS_HEADER;
-			text = CSTRING(ArtilleryStrike_GUI_NumberOfSalvos);
-			//tooltip = CSTRING();
+			text    = CSTRING(ArtilleryStrike_GUI_NumberOfSalvos);
+			tooltip = CSTRING(ArtilleryStrike_GUI_NumberOfSalvosTooltip);
 
 			x = 0.304062 * safezoneW + safezoneX;
 			y = 0.533    * safezoneH + safezoneY;
@@ -334,8 +321,8 @@ class GVAR(RscArtilleryStrike): RscDisplayAttributes
 		class CooldownTimeHeader: RscText
 		{
 			idc     = ARTY_STRIKE_IDC_COOLDOWN_TIME_HEADER;
-			text = CSTRING(ArtilleryStrike_GUI_Cooldown);
-			//tooltip = CSTRING();
+			text    = CSTRING(ArtilleryStrike_GUI_Cooldown);
+			tooltip = CSTRING(ArtilleryStrike_GUI_CooldownTooltip);
 
 			x = 0.304688 * safezoneW + safezoneX;
 			y = 0.577778 * safezoneH + safezoneY;

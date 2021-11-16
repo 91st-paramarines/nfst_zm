@@ -67,8 +67,9 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class PlaneTypeHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_PLANE_TYPE_HEADER;
-			text = CSTRING(AirStrike_GUI_PlaneType);
+			idc     = AIR_STRIKE_IDC_PLANE_TYPE_HEADER;
+			text    = CSTRING(AirStrike_GUI_PlaneType);
+			tooltip = CSTRING(AirStrike_GUI_PlaneTypeTooltip);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.269     * safezoneH + safezoneY;
@@ -91,8 +92,9 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class NumberOfPlanesHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_NUMBER_OF_PLANES_HEADER;
-			text = CSTRING(AirStrike_GUI_NumberOfPlanes);
+			idc     = AIR_STRIKE_IDC_NUMBER_OF_PLANES_HEADER;
+			text    = CSTRING(AirStrike_GUI_NumberOfPlanes);
+			tooltip = CSTRING(AirStrike_GUI_NumberOfPlanesTooltip);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.313     * safezoneH + safezoneY;
@@ -128,8 +130,9 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class FormationHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_FORMATION_HEADER;
-			text = CSTRING(AirStrike_GUI_Formation);
+			idc     = AIR_STRIKE_IDC_FORMATION_HEADER;
+			text    = CSTRING(AirStrike_GUI_Formation);
+			tooltip = CSTRING(AirStrike_GUI_FormationTooltip);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.357     * safezoneH + safezoneY;
@@ -179,8 +182,9 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class BombTypeHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_BOMB_TYPE_HEADER;
-			text = CSTRING(AirStrike_GUI_BombType);
+			idc     = AIR_STRIKE_IDC_BOMB_TYPE_HEADER;
+			text    = CSTRING(AirStrike_GUI_BombType);
+			tooltip = CSTRING(AirStrike_GUI_BombTypeTooltip);
 
 			x = 0.510312  * safezoneW + safezoneX;
 			y = 0.269     * safezoneH + safezoneY;
@@ -202,8 +206,9 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class NumberOfBombsHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_NUMBER_OF_BOMBS_HEADER;
-			text = CSTRING(AirStrike_GUI_NumberOfBombs);
+			idc     = AIR_STRIKE_IDC_NUMBER_OF_BOMBS_HEADER;
+			text    = CSTRING(AirStrike_GUI_NumberOfBombs);
+			tooltip = CSTRING(AirStrike_GUI_NumberOfBombsTooltip);
 
 			x = 0.510312  * safezoneW + safezoneX;
 			y = 0.313     * safezoneH + safezoneY;
@@ -239,8 +244,9 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class BombsSpreadHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_BOMBS_SPREAD_HEADER;
-			text = CSTRING(AirStrike_GUI_Dispersion);
+			idc     = AIR_STRIKE_IDC_BOMBS_SPREAD_HEADER;
+			text    = CSTRING(AirStrike_GUI_Dispersion);
+			tooltip = CSTRING(AirStrike_GUI_DispersionTooltip);
 
 			x = 0.510312  * safezoneW + safezoneX;
 			y = 0.357     * safezoneH + safezoneY;
@@ -286,8 +292,9 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class FlightSpeedHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_FLIGHT_SPEED_HEADER;
-			text = CSTRING(AirStrike_GUI_Speed);
+			idc     = AIR_STRIKE_IDC_FLIGHT_SPEED_HEADER;
+			text    = CSTRING(AirStrike_GUI_Speed);
+			tooltip = CSTRING(AirStrike_GUI_SpeedTooltip);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.423     * safezoneH + safezoneY;
@@ -323,8 +330,9 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class FlightAltitudeHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_FLIGHT_ALTITUDE_HEADER;
-			text = CSTRING(AirStrike_GUI_Altitude);
+			idc     = AIR_STRIKE_IDC_FLIGHT_ALTITUDE_HEADER;
+			text    = CSTRING(AirStrike_GUI_Altitude);
+			tooltip = CSTRING(AirStrike_GUI_AltitudeTooltip);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.467     * safezoneH + safezoneY;
@@ -370,8 +378,9 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class SpawnBearingHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_SPAWN_BEARING_HEADER;
-			text = CSTRING(AirStrike_GUI_SpawnBearing);
+			idc     = AIR_STRIKE_IDC_SPAWN_BEARING_HEADER;
+			text    = CSTRING(AirStrike_GUI_SpawnBearing);
+			tooltip = CSTRING(AirStrike_GUI_SpawnBearingTooltip);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.533     * safezoneH + safezoneY;
@@ -407,8 +416,9 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class SpawnDistanceHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_SPAWN_DISTANCE_HEADER;
-			text = CSTRING(AirStrike_GUI_SpawnDistance);
+			idc     = AIR_STRIKE_IDC_SPAWN_DISTANCE_HEADER;
+			text    = CSTRING(AirStrike_GUI_SpawnDistance);
+			tooltip = CSTRING(AirStrike_GUI_SpawnDistanceTooltip);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.577     * safezoneH + safezoneY;
@@ -454,8 +464,9 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class DespawnBearingHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_DESPAWN_BEARING_HEADER;
-			text = CSTRING(AirStrike_GUI_DespawnBearing);
+			idc     = AIR_STRIKE_IDC_DESPAWN_BEARING_HEADER;
+			text    = CSTRING(AirStrike_GUI_DespawnBearing);
+			tooltip = CSTRING(AirStrike_GUI_DespawnBearingTooltip);
 
 			x = 0.304297  * safezoneW + safezoneX;
 			y = 0.643056  * safezoneH + safezoneY;
@@ -491,8 +502,9 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 		};
 		class DespawnDistanceHeader: RscText
 		{
-			idc = AIR_STRIKE_IDC_DESPAWN_DISTANCE_HEADER;
-			text = CSTRING(AirStrike_GUI_DespawnDistance);
+			idc     = AIR_STRIKE_IDC_DESPAWN_DISTANCE_HEADER;
+			text    = CSTRING(AirStrike_GUI_DespawnDistance);
+			tooltip = CSTRING(AirStrike_GUI_DespawnDistanceTooltip);
 
 			x = 0.304062  * safezoneW + safezoneX;
 			y = 0.687     * safezoneH + safezoneY;

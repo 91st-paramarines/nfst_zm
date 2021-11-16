@@ -27,33 +27,73 @@
       <English>ARTILLERY STRIKE</English>
       <French>FRAPPE D'ARTILLERIE</French>
     </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_SplashFrame">
+        <English>Splash area</English>
+      <French>Zone d'impact</French>
+    </Key>
     <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_Dispersion">
       <English>Dispersion</English>
       <French>Dispersion</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_DispersionTooltip">
+      <English>Maximum distance from the module where shells may be fired at, in meters.</English>
+      <French>Distance maximale des impacts au module, en mètres.</French>
     </Key>
     <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_Safezone">
       <English>Safe zone</English>
       <French>Zone de sécurité</French>
     </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_SafezoneTooltip">
+      <English>Minimum distance from the module where shells may be fired at, in meters.</English>
+      <French>Distance minimale des impacts au module, en mètres.</French>
+    </Key>
     <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_ShellType">
       <English>Shell type</English>
       <French>Type d'obus</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_ShellTypeTooltip">
+      <English>The ammunition used for the fire mission.</English>
+      <French>Le type de munition utilisé pour la frappe.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_SalvoFrame">
+      <English>Salvo settings</English>
+      <French>Paramètres de salve</French>
     </Key>
     <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_NumberOfRounds">
       <English>Quantity</English>
       <French>Quantité</French>
     </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_NumberOfRoundsTooltip">
+      <English>The number of rounds to be fired in a single salvo.</English>
+      <French>Le nombre d'obus tirés en une seule salve.</French>
+    </Key>
     <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_SalvoLength">
       <English>Salvo length</English>
       <French>Durée de salve</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_SalvoLengthTooltip">
+      <English>The duration of a salvo, in seconds.</English>
+      <French>La durée d'une salve, en secondes.</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_MissionFrame">
+      <English>Strike settings</English>
+      <French>Paramètres de frappe</French>
     </Key>
     <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_NumberOfSalvos">
       <English>Quantity</English>
       <French>Quantité</French>
     </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_NumberOfSalvosTooltip">
+      <English>The number of repetition of the salvo.</English>
+      <French>Le nombre de répétition de la salve.</French>
+    </Key>
     <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_Cooldown">
       <English>Cooldown</English>
       <French>Intervalle</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_ArtilleryStrike_GUI_CooldownTooltip">
+      <English>The delay between two successive salvos, in seconds.</English>
+      <French>L'intervalle entre deux salves successives, en secondes.</French>
     </Key>
 
     <Key ID="STR_NFST_Modules_AirStrike_DisplayName">
@@ -76,13 +116,25 @@
       <English>Type</English>
       <French>Type</French>
     </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_PlaneTypeTooltip">
+      <English>Select the plane that will carry out the strike.</English>
+      <French>Sélectionnez l'avion qui va réaliser la frappe.</French>
+    </Key>
     <Key ID="STR_NFST_Modules_AirStrike_GUI_NumberOfPlanes">
       <English>Number</English>
       <French>Nombre</French>
     </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_NumberOfPlanesTooltip">
+      <English>Set the number of planes that will be spawned.</English>
+      <French>Sélectionnez le nombre d'avions à générer.</French>
+    </Key>
     <Key ID="STR_NFST_Modules_AirStrike_GUI_Formation">
       <English>Formation</English>
       <French>Formation</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_FormationTooltip">
+      <English>Select the spawned planes' formation.</English>
+      <French>Sélectionnez la formation des avions générés.</French>
     </Key>
     <Key ID="STR_NFST_Modules_AirStrike_GUI_Bomb">
       <English>Bomb</English>
@@ -92,13 +144,25 @@
       <English>Type</English>
       <French>Type</French>
     </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_BombTypeTooltip">
+      <English>Select the type of bomb the planes will drop.</English>
+      <French>Séléctionnez le type de bomb que les avions vont larguer.</French>
+    </Key>
     <Key ID="STR_NFST_Modules_AirStrike_GUI_NumberOfBombs">
       <English>Number</English>
       <French>Nombre</French>
     </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_NumberOfBombsTooltip">
+      <English>Set the number of bombs that each plane will drop.</English>
+      <French>Sélectionnez le nombre de bombes que chaque avion va larguer.</French>
+    </Key>
     <Key ID="STR_NFST_Modules_AirStrike_GUI_Dispersion">
       <English>Dispersion</English>
       <French>Dispersion</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_DispersionTooltip">
+      <English>Set the approximate ground distance (in meters) between two successive bombs dropped by a single plane. </English>
+      <French>Sélectionnez la distance au sol approximative (en mètres) entre deux impacts successifs issus d'un même avion.</French>
     </Key>
     <Key ID="STR_NFST_Modules_AirStrike_GUI_FlightInfo">
       <English>Flight info</English>
@@ -108,9 +172,17 @@
       <English>Speed</English>
       <French>Vitesse</French>
     </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_SpeedTooltip">
+      <English>Set the planes' velocity, in kilometers per hour.</English>
+      <French>Sélectionnez la vitesse des avions, en kilomètres par heure.</French>
+    </Key>
     <Key ID="STR_NFST_Modules_AirStrike_GUI_Altitude">
       <English>Altitude</English>
       <French>Altitude</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_AltitudeTooltip">
+      <English>Set the plane's altitude above the module, in meters. They will fly at the same absolute height, so make sure their flight path doesn't lead them into a hill!</English>
+      <French>Sélectionnez l'altitude des avions à la verticale du module, en mètres. Les avions voleront à altitude absolue constante, assurez-vous qu'ils ne rencontrent pas de colline! </French>
     </Key>
     <Key ID="STR_NFST_Modules_AirStrike_GUI_SpawnInfo">
       <English>Spawn info</English>
@@ -120,9 +192,17 @@
       <English>Bearing</English>
       <French>Azimuth</French>
     </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_SpawnBearingTooltip">
+      <English>Set the planes' spawn bearing, relative to the module.</English>
+      <French>Sélectionnez l'azimuth du point d'apparition des avions, relatif au module.</French>
+    </Key>
     <Key ID="STR_NFST_Modules_AirStrike_GUI_SpawnDistance">
       <English>Distance</English>
       <French>Distance</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_SpawnDistanceTooltip">
+      <English>Set the planes' spawn distance in meters, relative to the module.</English>
+      <French>Sélectionnez la distance en mètres entre le point d'apparition et le module.</French>
     </Key>
     <Key ID="STR_NFST_Modules_AirStrike_GUI_DespawnInfo">
       <English>Despawn info</English>
@@ -132,9 +212,17 @@
       <English>Bearing</English>
       <French>Azimuth</French>
     </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_DespawnBearingTooltip">
+      <English>Set the planes' despawn bearing, relative to the module.</English>
+      <French>Sélectionnez l'azimuth du point de disparition des avions, relatif au module.</French>
+    </Key>
     <Key ID="STR_NFST_Modules_AirStrike_GUI_DespawnDistance">
       <English>Distance</English>
       <French>Distance</French>
+    </Key>
+    <Key ID="STR_NFST_Modules_AirStrike_GUI_DespawnDistanceTooltip">
+      <English>Set the planes' despawn distance in meters, relative to the module.</English>
+      <French>Sélectionnez la distance en mètres entre le point de disparition et le module.</French>
     </Key>
   </Package>
 </Project>

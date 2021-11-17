@@ -110,12 +110,16 @@ for "_i" from 0 to _planeNumber-1 do
       };
     } forEach _planeWeapons;
 
-    // Set bombing run waypoint
-    private _bombingWP = _planeGroup addWaypoint [_bombingPos select 0, -1];
-    _bombingWP setWaypointCompletionRadius 10;
-    _bombingWP setWaypointBehaviour "CARELESS";
-    _bombingWP setWaypointStatements
+    // Add bombing run waypoint
+    private _bombingRunWP = _planeGroup addWaypoint [_bombingPos select 0, -1];
+    _bombingRunWP setWaypointCompletionRadius 10;
+    _bombingRunWP setWaypointBehaviour "CARELESS";
+    _bombingRunWP setWaypointStatements
     ["true", format ["[this, %1, %2, %3, %4] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoBombingRun.sqf';", str _activeWeapon, _targets, _fireMode, _cooldown]];
+
+    // Add bombing end waypoint
+    private _bombingEndWP = _planeGroup addWaypoint [_bombingPos select ((count _bombingPos) - 1), -1];
+    _bombingEndWP setWaypointCompletionRadius 10;
 
     // Add the despawn waypoint
     private _despawnWP = _planeGroup addWaypoint [_despawnPos, -1];

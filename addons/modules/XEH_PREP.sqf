@@ -3,9 +3,9 @@ PREP(moduleArtilleryStrikeOnConfirm);
 PREP(moduleArtilleryStrikeDisplaySplashChanged);
 
 PREP(moduleAirStrikeGetBombsAndPlanes);
-PREP(moduleAirStrikeSetBomberPlanes);
-PREP(moduleAirStrikeSetInfoFromPlane);
-PREP(moduleAirStrikeSetBombSliderRange);
-PREP(moduleAirStrikeSetSpread);
+PREP(moduleAirStrikeDisplayPlaneCombo);
+PREP(moduleAirStrikeDisplayPlaneChanged);
+PREP(moduleAirStrikeDisplayBombChanged);
+PREP(moduleAirStrikeDisplaySpeedChanged);
 PREP(moduleAirStrikeOnPlace);
 PREP(moduleAirStrikeOnConfirm);

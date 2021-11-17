@@ -1,17 +1,29 @@
 // DISCLAIMER
 Even in the context of Vietnam and the SOG DLC, the abbreviation WP refers to waypoint, and NOT white phosphorous
 
+Grenade wheel
+^ Do it
+
 ArtilleryStrike
 ^ Fix safe zone readout not updating on inferior splash radius update
+- get ride of the onPlace onFirm structure
+- add delay (slider) before shells landing
+- make the module disappear after use or after not use
 v Use more MACROS for string attributes
 v Add CBA settings to control default slider values
 
 AirStrike
+- make the module disappear after use or after not use
+- get ride of the onPlace onConfirm structure
+- set the planes on careless?
+- Set default max number of planes to 5
 - Figure out how to hit a target WITH NAPALM
 - Raise minimum distance for spawn and despawn
-- Add intermediate wp so that planes stay on bombing bearing until the last bomb is dropped?
 - Check that ATL/ASL BS for the spawn and WP
 - Add better class finding with category=="air"
+- remove vehicles with no bombs
+- remove bombs with 0 ammo
+- remove same ammo magazines (keep only max capacity one)
 v Automatically add created entities to curator
 v It appears drones don't do too well with the module, which isn't surprising as they don't have crew
 v Implement a fancy strike pattern based on formation
@@ -19,9 +31,9 @@ v Add CBA settings to control default slider values
 
 Others
 3den module to place intel
-3den and Zeus module to add ACRE radios
 3den and Zeus module to add spiked ammo (group and individual)
-Grenade selection wheel
+3den and Zeus module to add slingload
+3den and Zeus module to add ACRE radios
 
 All
 Optimize

@@ -87,8 +87,8 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 			w = 0.134062 * safezoneW;
 			h = 0.022    * safezoneH;
 
-			onLoad         = QUOTE( AIR_STRIKE_IDC_PLANE_TYPE_COMBO spawn FUNC(moduleAirStrikeSetBomberPlanes)  );
-			onLbSelChanged = QUOTE( AIR_STRIKE_IDC_PLANE_CHANGED    spawn FUNC(moduleAirStrikeSetInfoFromPlane) );
+			onLoad         = QUOTE( AIR_STRIKE_IDC_PLANE_TYPE_COMBO spawn FUNC(moduleAirStrikeDisplayPlaneCombo)  );
+			onLbSelChanged = QUOTE( AIR_STRIKE_IDC_PLANE_CHANGED    spawn FUNC(moduleAirStrikeDisplayPlaneChanged) );
 		};
 		class NumberOfPlanesHeader: RscText
 		{
@@ -202,7 +202,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 			w = 0.134062 * safezoneW;
 			h = 0.022    * safezoneH;
 
-			onLbSelChanged = QUOTE( AIR_STRIKE_IDC_BOMB_CHANGED spawn FUNC(moduleAirStrikeSetBombSliderRange) );
+			onLbSelChanged = QUOTE( AIR_STRIKE_IDC_BOMB_CHANGED spawn FUNC(moduleAirStrikeDisplayBombChanged) );
 		};
 		class NumberOfBombsHeader: RscText
 		{
@@ -316,8 +316,7 @@ class GVAR(RscAirStrike): RscDisplayAttributes
 			sliderStep     = AIR_STRIKE_FLIGHT_SPEED_STEP;
 			sliderPosition = AIR_STRIKE_FLIGHT_SPEED_DEFAULT;
 
-			onSliderPosChanged = QUOTE( AIR_STRIKE_IDC_SPEED_CHANGED spawn FUNC(moduleAirStrikeSetSpread) ); // CHange func name
-			//onSliderPosChanged = QUOTE( ctrlSetText [AIR_STRIKE_IDC_FLIGHT_SPEED_READOUT, str (_this select 1)] );
+			onSliderPosChanged = QUOTE( AIR_STRIKE_IDC_SPEED_CHANGED spawn FUNC(moduleAirStrikeDisplaySpeedChanged) );
 		};
 		class FlightSpeedReadout: RscText
 		{

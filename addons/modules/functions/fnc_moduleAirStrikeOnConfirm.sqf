@@ -115,7 +115,7 @@ for "_i" from 0 to _planeNumber-1 do
     _bombingRunWP setWaypointCompletionRadius 10;
     _bombingRunWP setWaypointBehaviour "CARELESS";
     _bombingRunWP setWaypointStatements
-    ["true", format ["[this, %1, %2, %3, %4] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoBombingRun.sqf';", str _activeWeapon, _targets, _fireMode, _cooldown]];
+    ["true", format ["[this, %1, %2, %3, %4] execVM '\x\nfst_zm\addons\modules\functions\fnc_moduleAirStrikeDoBombingRun.sqf';", str _activeWeapon, _targets, _fireMode, _cooldown]];
 
     // Add bombing end waypoint
     private _bombingEndWP = _planeGroup addWaypoint [_bombingPos select ((count _bombingPos) - 1), -1];
@@ -125,7 +125,7 @@ for "_i" from 0 to _planeNumber-1 do
     private _despawnWP = _planeGroup addWaypoint [_despawnPos, -1];
     _despawnWP setWaypointCompletionRadius 10;
     _despawnWP setWaypointStatements
-    ["true", "[this] execVM '\x\nfst\addons\modules\functions\fnc_moduleAirStrikeDoDespawn.sqf';"];
+    ["true", "[this] execVM '\x\nfst_zm\addons\modules\functions\fnc_moduleAirStrikeDoDespawn.sqf';"];
 
 // Add objects to curators
 /*

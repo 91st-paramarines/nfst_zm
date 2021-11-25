@@ -1,4 +1,4 @@
 #define MAINPREFIX x
-#define PREFIX nfst
+#define PREFIX nfst_zm
 
 #define COMPONENT_NAME QUOTE(NFST - COMPONENT_BEAUTIFIED)

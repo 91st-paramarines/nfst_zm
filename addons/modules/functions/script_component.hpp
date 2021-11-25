@@ -1,1 +1,1 @@
-#include "\x\nfst\addons\modules\script_component.hpp"
+#include "\x\nfst_zm\addons\modules\script_component.hpp"

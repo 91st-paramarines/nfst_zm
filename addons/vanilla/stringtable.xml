@@ -1,226 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="NFST_ZM">
-  <Package name="Modules">
-    <Key ID="STR_NFST_ZM_Modules_Category_DisplayName">
+  <Package name="Vanilla">
+    <Key ID="STR_NFST_ZM_Vanilla_Category_DisplayName">
       <English>91st Paramarines - Utility Module</English>
       <French>91st Paramarines - Module Utilitaire</French>
     </Key>
 
-    <Key ID="STR_NFST_ZM_Modules_Common_Cancel">
+    <Key ID="STR_NFST_ZM_Vanilla_Common_Cancel">
       <English>Cancel</English>
       <French>Annuler</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_Common_Confirm">
+    <Key ID="STR_NFST_ZM_Vanilla_Common_Confirm">
       <English>Confirm</English>
       <French>Confirmer</French>
     </Key>
 
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_DisplayName">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_DisplayName">
       <English>Artillery Strike</English>
       <French>Frappe d'artillerie</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_Description">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_Description">
       <English>Place on desired splash location.</English>
       <French>Placer sur la zone d'impact voulue.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_Title">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_Title">
       <English>ARTILLERY STRIKE</English>
       <French>FRAPPE D'ARTILLERIE</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_SplashFrame">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_SplashFrame">
         <English>Splash area</English>
       <French>Zone d'impact</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_Dispersion">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_Dispersion">
       <English>Dispersion</English>
       <French>Dispersion</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_DispersionTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_DispersionTooltip">
       <English>Maximum distance from the module where shells may be fired at, in meters.</English>
       <French>Distance maximale des impacts au module, en mètres.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_Safezone">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_Safezone">
       <English>Safe zone</English>
       <French>Zone de sécurité</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_SafezoneTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_SafezoneTooltip">
       <English>Minimum distance from the module where shells may be fired at, in meters.</English>
       <French>Distance minimale des impacts au module, en mètres.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_ShellType">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_ShellType">
       <English>Shell type</English>
       <French>Type d'obus</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_ShellTypeTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_ShellTypeTooltip">
       <English>The ammunition used for the fire mission.</English>
       <French>Le type de munition utilisé pour la frappe.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_SalvoFrame">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_SalvoFrame">
       <English>Salvo settings</English>
       <French>Paramètres de salve</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_NumberOfRounds">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_NumberOfRounds">
       <English>Quantity</English>
       <French>Quantité</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_NumberOfRoundsTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_NumberOfRoundsTooltip">
       <English>The number of rounds to be fired in a single salvo.</English>
       <French>Le nombre d'obus tirés en une seule salve.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_SalvoLength">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_SalvoLength">
       <English>Salvo length</English>
       <French>Durée de salve</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_SalvoLengthTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_SalvoLengthTooltip">
       <English>The duration of a salvo, in seconds.</English>
       <French>La durée d'une salve, en secondes.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_MissionFrame">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_MissionFrame">
       <English>Strike settings</English>
       <French>Paramètres de frappe</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_NumberOfSalvos">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_NumberOfSalvos">
       <English>Quantity</English>
       <French>Quantité</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_NumberOfSalvosTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_NumberOfSalvosTooltip">
       <English>The number of repetition of the salvo.</English>
       <French>Le nombre de répétition de la salve.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_Cooldown">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_Cooldown">
       <English>Cooldown</English>
       <French>Intervalle</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_ArtilleryStrike_GUI_CooldownTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_ArtilleryStrike_GUI_CooldownTooltip">
       <English>The delay between two successive salvos, in seconds.</English>
       <French>L'intervalle entre deux salves successives, en secondes.</French>
     </Key>
 
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_DisplayName">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_DisplayName">
       <English>Air Strike</English>
       <French>Frappe aérienne</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_Description">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_Description">
       <English>Place on desired splash location.</English>
       <French>Placer sur la zone d'impact voulue.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_Title">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_Title">
       <English>AIR STRIKE</English>
       <French>FRAPPE AÉRIENNE</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_Plane">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_Plane">
       <English>Plane</English>
       <French>Avion</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_PlaneType">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_PlaneType">
       <English>Type</English>
       <French>Type</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_PlaneTypeTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_PlaneTypeTooltip">
       <English>Select the plane that will carry out the strike.</English>
       <French>Sélectionnez l'avion qui va réaliser la frappe.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_NumberOfPlanes">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_NumberOfPlanes">
       <English>Number</English>
       <French>Nombre</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_NumberOfPlanesTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_NumberOfPlanesTooltip">
       <English>Set the number of planes that will be spawned.</English>
       <French>Sélectionnez le nombre d'avions à générer.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_Formation">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_Formation">
       <English>Formation</English>
       <French>Formation</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_FormationTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_FormationTooltip">
       <English>Select the spawned planes' formation.</English>
       <French>Sélectionnez la formation des avions générés.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_Bomb">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_Bomb">
       <English>Bomb</English>
       <French>Bombe</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_BombType">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_BombType">
       <English>Type</English>
       <French>Type</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_BombTypeTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_BombTypeTooltip">
       <English>Select the type of bomb the planes will drop.</English>
       <French>Séléctionnez le type de bomb que les avions vont larguer.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_NumberOfBombs">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_NumberOfBombs">
       <English>Number</English>
       <French>Nombre</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_NumberOfBombsTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_NumberOfBombsTooltip">
       <English>Set the number of bombs that each plane will drop.</English>
       <French>Sélectionnez le nombre de bombes que chaque avion va larguer.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_Dispersion">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_Dispersion">
       <English>Dispersion</English>
       <French>Dispersion</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_DispersionTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_DispersionTooltip">
       <English>Set the approximate ground distance (in meters) between two successive bombs dropped by a single plane. </English>
       <French>Sélectionnez la distance au sol approximative (en mètres) entre deux impacts successifs issus d'un même avion.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_FlightInfo">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_FlightInfo">
       <English>Flight info</English>
       <French>Paramètres de vol</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_Speed">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_Speed">
       <English>Speed</English>
       <French>Vitesse</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_SpeedTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_SpeedTooltip">
       <English>Set the planes' velocity, in kilometers per hour.</English>
       <French>Sélectionnez la vitesse des avions, en kilomètres par heure.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_Altitude">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_Altitude">
       <English>Altitude</English>
       <French>Altitude</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_AltitudeTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_AltitudeTooltip">
       <English>Set the plane's altitude above the module, in meters. They will fly at the same absolute height, so make sure their flight path doesn't lead them into a hill!</English>
       <French>Sélectionnez l'altitude des avions à la verticale du module, en mètres. Les avions voleront à altitude absolue constante, assurez-vous qu'ils ne rencontrent pas de colline! </French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_SpawnInfo">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_SpawnInfo">
       <English>Spawn info</English>
       <French>Point d'apparition</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_SpawnBearing">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_SpawnBearing">
       <English>Bearing</English>
       <French>Azimuth</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_SpawnBearingTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_SpawnBearingTooltip">
       <English>Set the planes' spawn bearing, relative to the module.</English>
       <French>Sélectionnez l'azimuth du point d'apparition des avions, relatif au module.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_SpawnDistance">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_SpawnDistance">
       <English>Distance</English>
       <French>Distance</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_SpawnDistanceTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_SpawnDistanceTooltip">
       <English>Set the planes' spawn distance in meters, relative to the module.</English>
       <French>Sélectionnez la distance en mètres entre le point d'apparition et le module.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_DespawnInfo">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_DespawnInfo">
       <English>Despawn info</English>
       <French>Point de disparition</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_DespawnBearing">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_DespawnBearing">
       <English>Bearing</English>
       <French>Azimuth</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_DespawnBearingTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_DespawnBearingTooltip">
       <English>Set the planes' despawn bearing, relative to the module.</English>
       <French>Sélectionnez l'azimuth du point de disparition des avions, relatif au module.</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_DespawnDistance">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_DespawnDistance">
       <English>Distance</English>
       <French>Distance</French>
     </Key>
-    <Key ID="STR_NFST_ZM_Modules_AirStrike_GUI_DespawnDistanceTooltip">
+    <Key ID="STR_NFST_ZM_Vanilla_AirStrike_GUI_DespawnDistanceTooltip">
       <English>Set the planes' despawn distance in meters, relative to the module.</English>
       <French>Sélectionnez la distance en mètres entre le point de disparition et le module.</French>
     </Key>
